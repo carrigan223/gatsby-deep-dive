@@ -10,6 +10,7 @@ const Title = styled(Heading)`
   font-weight: 600;
   font-size: ${(props) => props.theme.fontSizes[5]}px;
   margin: 0;
+
   @media (min-width: ${(props) => props.theme.breakpoints[1]}) {
     font-size: ${(props) => props.theme.fontSizes[6]}px;
   }
@@ -22,6 +23,7 @@ const Description = styled(Text)`
   font-size: ${(props) => props.theme.fontSizes[3]}px;
   line-height: 1.35em;
   margin: 0;
+
   @media (min-width: ${(props) => props.theme.breakpoints[1]}) {
     font-size: ${(props) => props.theme.fontSizes[4]}px;
   }
@@ -49,18 +51,23 @@ const Hero = ({ truncated }) => (
     <AspectRatioBox ratio={8 / 5} />
   </HeroWrap>
 );
+
 const ProjectHeader = ({ project, truncated }) => (
   <Box>
-    <Flex>
-      <Box>
-        <Title as="h1">title goes here</Title>
-        <Box>
-          <Category as="h3">category goes here</Category>
+    <Flex flexWrap="wrap">
+      <Box width={[1, 1 / 2]}>
+        <Title as="h1">{project.title}</Title>
+        <Box mt={3}>
+          <Category as="h3">Random Works</Category>
         </Box>
       </Box>
-      <Box>
-        <Box>
-          <Description as="h2">description goes heree ...</Description>
+      <Box width={[1, 1 / 2]}>
+        <Box mt={[3, 0]}>
+          <Description as="h2">
+            Lorem ipsum dolor amet scenester distillery tbh messenger bag DIY
+            pok pok food truck. Ramps iPhone gastropub actually freegan
+            cardigan.
+          </Description>
         </Box>
       </Box>
     </Flex>

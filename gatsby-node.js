@@ -1,5 +1,5 @@
 const path = require("path");
-//using gatsby-node to generate project pages 
+//using gatsby-node to generate project pages
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
   const projectTemplate = path.resolve(`./src/templates/project.js`);
@@ -20,6 +20,10 @@ exports.createPages = async ({ actions }) => {
     {
       title: "Project #4",
       slug: "project-4",
+    },
+    {
+      title: "Project #5",
+      slug: "project-5",
     },
   ];
 
