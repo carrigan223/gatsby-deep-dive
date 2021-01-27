@@ -12,17 +12,17 @@ const theme = {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 46],
   colors: {
-    grey: "#999",
+    grey: "grey",
     black: "#1a1a1a",
-    red: "#e61428",
+    red: "teal",
   },
-}; //theme seeting breakpoints, colors space, fonts, and fontsize for use as proo
+}; //theme setting breakpoints, colors space, fonts, and fontsize for use as proo
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Box as="header" px={[3, 5]}>
-        silly header
+        Carrigan Web Designs
       </Box>
       <Box as="main" px={[3, 5]}>
         {children}

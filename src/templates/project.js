@@ -7,7 +7,6 @@ import ProjectHeader from "../components/project-header";
 import ProjectContent from "../components/project-content";
 import NextProjectHeading from "../components/next-project-heading";
 
-
 // below is setting our transisition animations
 const TRANSITION_LENGTH = 1.5;
 
@@ -58,7 +57,7 @@ const ProjectInner = ({ transitionStatus, project }) => {
       }
     },
   };
-//this is the main project being viewed
+  //this is the main project being viewed
   return (
     <Layout transitionStatus={transitionStatus}>
       <FadingContent pose={transitionStatus}>
