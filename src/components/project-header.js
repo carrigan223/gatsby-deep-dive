@@ -57,16 +57,12 @@ const ProjectHeader = ({ project, truncated }) => (
       <Box width={[1, 1 / 2]}>
         <Title as="h1">{project.title}</Title>
         <Box mt={3}>
-          <Category as="h3">Random Works</Category>
+          <Category as="h3">{project.category.title}</Category>
         </Box>
       </Box>
       <Box width={[1, 1 / 2]}>
         <Box mt={[3, 0]}>
-          <Description as="h2">
-            Lorem ipsum dolor amet scenester distillery tbh messenger bag DIY
-            pok pok food truck. Ramps iPhone gastropub actually freegan
-            cardigan.
-          </Description>
+          <Description as="h2">{project.description}</Description>
         </Box>
       </Box>
     </Flex>
