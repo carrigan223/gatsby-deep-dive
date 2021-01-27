@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Flex, Heading, Text } from "rebass";
 import styled, { css } from "styled-components";
-
 import AspectRatioBox from "./aspect-ratio-box";
-
+//styleing using styled components
 const Title = styled(Heading)`
   color: ${(props) => props.theme.colors.black};
   font-family: ${(props) => props.theme.fonts.sans};
@@ -45,7 +44,7 @@ const HeroWrap = styled(Box)`
       overflow: hidden;
     `}
 `;
-
+//setting up a truncated hero to show prior to transitioning to new project
 const Hero = ({ truncated }) => (
   <HeroWrap mt={[4, 5]} truncated={truncated}>
     <AspectRatioBox ratio={8 / 5} />

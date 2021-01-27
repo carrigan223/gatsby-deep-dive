@@ -1,40 +1,37 @@
+//using gatsby node we are pulling data from datoCMS for page creation of our projects 
 const path = require("path");
-//using gatsby-node to generate project pages
-exports.createPages = async ({ actions }) => {
+
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const projectTemplate = path.resolve(`./src/templates/project.js`);
 
-  const projects = [
-    {
-      title: "Project #1",
-      slug: "project-1",
-    },
-    {
-      title: "Project #2",
-      slug: "project-2",
-    },
-    {
-      title: "Project #3",
-      slug: "project-3",
-    },
-    {
-      title: "Project #4",
-      slug: "project-4",
-    },
-    {
-      title: "Project #5",
-      slug: "project-5",
-    },
-  ];
+  const query = `{
+    projects:allDatoCmsTitle {
+      edges {
+        node {
+          title
+          slug
+          description
+        }
+        next {
+          slug
+        }
+      }
+    }
+  }`;
 
-  const createProjectPage = (project, index) => {
-    const next = projects[index === projects.length - 1 ? 0 : index + 1];
+  const result = await graphql(query);
+
+  const projects = result.data.projects.edges;
+
+  const createProjectPage = (project) => {
+    const next = project.next || projects[0].node;
     createPage({
-      path: `/projects/${project.slug}`,
+      path: `/projects/${project.node.slug}`,
       component: projectTemplate,
       context: {
-        ...project,
-        next,
+        nextSlug: next.slug,
+        ...project.node,
       },
     });
   };

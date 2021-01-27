@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const Home = () => <Link to="/projects/project-1">Hello World</Link>;
+const Home = () => {
+  return <Link to="/projects/mccarron-auto">Hello World</Link>;
+};
 
 export default Home;

@@ -16,7 +16,7 @@ const theme = {
     black: "#1a1a1a",
     red: "#e61428",
   },
-};//theme seeting breakpoints, colors space, fonts, and fontsize for use as proo
+}; //theme seeting breakpoints, colors space, fonts, and fontsize for use as proo
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>

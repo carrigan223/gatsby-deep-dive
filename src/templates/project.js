@@ -1,11 +1,14 @@
 import React from "react";
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
 import posed from "react-pose";
-
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import ProjectHeader from "../components/project-header";
 import ProjectContent from "../components/project-content";
+import NextProjectHeading from "../components/next-project-heading";
 
+
+// below is setting our transisition animations
 const TRANSITION_LENGTH = 1.5;
 
 const FadingContent = posed.div({
@@ -27,6 +30,10 @@ const SlidingHeader = posed.div({
       duration: TRANSITION_LENGTH * 1000 - 250,
     },
   },
+});
+
+const FadingNextProjectHeading = posed.div({
+  exiting: { opacity: 0 },
 });
 
 const ProjectInner = ({ transitionStatus, project }) => {
@@ -51,12 +58,12 @@ const ProjectInner = ({ transitionStatus, project }) => {
       }
     },
   };
-
+//this is the main project being viewed
   return (
-    <Layout>
+    <Layout transitionStatus={transitionStatus}>
       <FadingContent pose={transitionStatus}>
         <ProjectHeader project={project} />
-        <ProjectContent />
+        <ProjectContent photos={project.photos} />
       </FadingContent>
       <TransitionLink
         style={{
@@ -67,6 +74,9 @@ const ProjectInner = ({ transitionStatus, project }) => {
         exit={exitTransition}
         entry={entryTransition}
       >
+        <FadingNextProjectHeading pose={transitionStatus}>
+          <NextProjectHeading />
+        </FadingNextProjectHeading>
         <SlidingHeader pose={transitionStatus}>
           <ProjectHeader project={project.next} truncated={shouldTruncate} />
         </SlidingHeader>
@@ -74,15 +84,59 @@ const ProjectInner = ({ transitionStatus, project }) => {
     </Layout>
   );
 };
+// setting up the transition and view of next project
+const Project = ({ pageContext: projectShell, data }) => {
+  const { project, next } = data;
+  const aggregateProject = {
+    ...projectShell,
+    ...project,
+    next,
+  };
 
-const Project = ({ pageContext: project }) => {
   return (
     <TransitionState>
       {({ transitionStatus }) => (
-        <ProjectInner transitionStatus={transitionStatus} project={project} />
+        <ProjectInner
+          transitionStatus={transitionStatus}
+          project={aggregateProject}
+        />
       )}
     </TransitionState>
   );
 };
-
+//graph query getting ourcontent from datosCMS
+export const query = graphql`
+  query($slug: String!, $nextSlug: String!) {
+    project: datoCmsTitle(slug: { eq: $slug }) {
+      description
+      category {
+        title
+      }
+      featuredPhoto {
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      photos {
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+    }
+    next: datoCmsTitle(slug: { eq: $nextSlug }) {
+      title
+      slug
+      description
+      category {
+        title
+      }
+      featuredPhoto {
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+    }
+  }
+`;
+// exporting project component
 export default Project;
