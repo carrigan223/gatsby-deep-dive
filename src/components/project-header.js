@@ -17,7 +17,7 @@ export const Title = styled(Heading)`
 `;
 
 export const Description = styled(Text)`
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.grey};
   font-family: ${(props) => props.theme.fonts.sans};
   font-weight: 600;
   font-size: ${(props) => props.theme.fontSizes[3]}px;
@@ -29,7 +29,7 @@ export const Description = styled(Text)`
 `;
 
 export const Category = styled(Text)`
-  color: ${(props) => props.theme.colors.grey};
+  color: ${(props) => props.theme.colors.teal};
   font-family: ${(props) => props.theme.fonts.sans};
   font-size: ${(props) => props.theme.fontSizes[3]}px;
   font-weight: normal;
@@ -46,6 +46,14 @@ const HeroWrap = styled(Box)`
     `}
 `;
 
+const Rule = styled.hr`
+  background: #e3e4e5;
+  height: 1px;
+  border: 0;
+  margin-bottom: 2rem;
+`;
+
+
 const Hero = ({ photo, truncated }) => {
   const withFixedAspectRatio = {
     ...photo.fluid,
@@ -53,6 +61,7 @@ const Hero = ({ photo, truncated }) => {
   };
   return (
     <HeroWrap mt={[4, 5]} truncated={truncated}>
+      <Rule />
       <AspectRatioBox ratio={8 / 5}>
         <Img
           loading={truncated ? "lazy" : "eager"}

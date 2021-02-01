@@ -14,14 +14,15 @@ const theme = {
   colors: {
     grey: "grey",
     black: "#1a1a1a",
-    red: "teal",
+    teal: "teal",
+    white: "white",
   },
 }; //theme setting breakpoints, colors space, fonts, and fontsize for use as proo
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
-      <Box as="header" px={[3, 5]}>
+      <Box as="header" px={[5, 5]} color="teal">
         Carrigan Web Designs
       </Box>
       <Box as="main" px={[3, 5]}>
