@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Particles from "react-tsparticles";
 
 ///////
 
@@ -10,7 +11,7 @@ const CustomNav = styled(Navbar)`
   box-shadow: -2px 8px 8px -4px #999;
   /* padding-top: 7rem; */
   padding-bottom: 2rem;
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   align-items: space-evenly;
   flex-direction: column;
@@ -26,12 +27,13 @@ const NavLink = styled(AniLink)`
   font-family: "Montserrat";
   /* line-height: 1; */
   /* margin: 0 0.5rem 0 0; */
-  padding: 0.45rem;
+  padding: 1rem 5rem;
   text-decoration: none;
   text-shadow: 0 0 2px silver, 0 0 2px silver, 0 0 7px silver, 0 0 1px silver;
 
   :hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: teal;
   }
 
   &.current-page {
@@ -55,62 +57,124 @@ const Title = styled("h1")`
   color: white;
   text-decoration: none;
   padding-left: 1rem;
-  font-family: "Rajdhani";
+  font-family: "Amatic SC";
   font-size: 5rem;
+`;
+
+const StyledParticles = styled(Particles)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 const Header = () => {
   return (
-    <CustomNav expand="lg" bg="dark">
-      <StyledDiv>
-        <Title>Andrew Carrigan</Title>
-      </StyledDiv>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <NavLink
-            paintDrip
-            to="/projects/mccarron-auto"
-            duration={1}
-            color="yellow"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            paintDrip
-            to="/projects/mccarron-auto"
-            duration={1}
-            color="yellow"
-          >
-            About
-          </NavLink>
-          <NavLink
-            paintDrip
-            to="/projects/mccarron-auto"
-            duration={1}
-            color="yellow"
-          >
-            Contact
-          </NavLink>
-          <NavLink
-            paintDrip
-            to="/projects/mccarron-auto"
-            duration={1}
-            color="yellow"
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            paintDrip
-            to="/projects/mccarron-auto"
-            duration={1}
-            color="yellow"
-          >
-            Articles
-          </NavLink>
-        </Nav>
-      </Navbar.Collapse>
-    </CustomNav>
+    <>
+      <StyledParticles
+        id="tsparticles"
+        options={{
+          background: {
+            color: {
+              value: "#000000",
+            },
+          },
+          fpsLimit: 60,
+          particles: {
+            color: {
+              value: "#008080",
+            },
+            links: {
+              color: "#FFFF00",
+              distance: 170,
+              enable: true,
+              opacity: 0.75,
+              width: 1.5,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 3,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+              value: 90,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 5,
+            },
+          },
+          detectRetina: true,
+        }}
+      />
+      <CustomNav expand="lg">
+        <StyledDiv>
+          <Title>Andrew Carrigan</Title>
+        </StyledDiv>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+            <NavLink
+              paintDrip
+              to="/projects/mccarron-auto"
+              duration={1}
+              color="yellow"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              paintDrip
+              to="/projects/mccarron-auto"
+              duration={1}
+              color="yellow"
+            >
+              About
+            </NavLink>
+            <NavLink
+              paintDrip
+              to="/projects/mccarron-auto"
+              duration={1}
+              color="yellow"
+            >
+              Contact
+            </NavLink>
+            <NavLink
+              paintDrip
+              to="/projects/mccarron-auto"
+              duration={1}
+              color="yellow"
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              paintDrip
+              to="/projects/mccarron-auto"
+              duration={1}
+              color="yellow"
+            >
+              Articles
+            </NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </CustomNav>
+    </>
   );
 };
 
