@@ -19,7 +19,7 @@ const theme = {
   },
 }; //theme setting breakpoints, colors space, fonts, and fontsize for use as proo
 
-const Layout = ({ children }) => (
+const ProjectLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Box as="header" px={[5, 5]} color="teal">
@@ -32,4 +32,4 @@ const Layout = ({ children }) => (
   </ThemeProvider>
 );
 
-export default Layout;
+export default ProjectLayout;

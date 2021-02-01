@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Text, Flex } from "rebass";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 //component displaying next project header
 const Heading = styled(Text)`
@@ -27,16 +28,15 @@ const BoxTwo = styled(Box)`
   justify-content: flex-end;
 `;
 
-
 const NextProjectHeading = () => (
   <Flex>
     <BoxOne mb={5} p={3} width={1 / 2}>
       <Heading pt={3}>Next Project</Heading>
     </BoxOne>
     <BoxTwo mb={5} p={3} width={1 / 2} bg="primary">
-      <Link to="/">
+      <AniLink paintDrip to="/" duration={1} color="teal">
         <Heading pt={3}>Return To Home</Heading>
-      </Link>
+      </AniLink>
     </BoxTwo>
   </Flex>
 );

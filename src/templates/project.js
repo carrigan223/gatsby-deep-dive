@@ -2,7 +2,7 @@ import React from "react";
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link";
 import posed from "react-pose";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import ProjectLayout from "../components/projects-layout";
 import ProjectHeader from "../components/project-header";
 import ProjectContent from "../components/project-content";
 import NextProjectHeading from "../components/next-project-heading";
@@ -59,7 +59,7 @@ const ProjectInner = ({ transitionStatus, project }) => {
   };
   //this is the main project being viewed
   return (
-    <Layout transitionStatus={transitionStatus}>
+    <ProjectLayout transitionStatus={transitionStatus}>
       <FadingContent pose={transitionStatus}>
         <ProjectHeader project={project} />
         <ProjectContent photos={project.photos} />
@@ -80,7 +80,7 @@ const ProjectInner = ({ transitionStatus, project }) => {
           <ProjectHeader project={project.next} truncated={shouldTruncate} />
         </SlidingHeader>
       </TransitionLink>
-    </Layout>
+    </ProjectLayout>
   );
 };
 // setting up the transition and view of next project
