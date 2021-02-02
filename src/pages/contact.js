@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 import Particles from "react-tsparticles";
 import ContactForm from "../components/contact-form";
+import Footer from "../components/footer";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
@@ -111,6 +112,7 @@ const ContactPage = () => {
         </Col>
       </Row>
       <ContactForm />
+      <Footer />
     </StyledContainer>
   );
 };
