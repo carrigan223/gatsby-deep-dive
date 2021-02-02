@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Particles from "react-tsparticles";
 
 const StyledParticles = styled(Particles)`
@@ -48,12 +48,36 @@ const HeaderText = styled("h1")`
 `;
 
 const FormInputs = styled(Form.Control)`
-    border-radius: 0;
+  border-radius: 30;
+  font-family: "Fredoka One";
+`;
+
+const StyledContainer = styled(Container)`
+  padding-top: 2.5rem;
+  padding-bottom: 6rem;
+`;
+
+const ButtonCol = styled(Col)`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledButton = styled(Button)`
+  font-family: "Fredoka One";
+  font-size: 1.5rem;
+  background-color: teal;
+  color: yellow;
+  border: none;
+
+  :hover {
+    background-color: yellow;
+    color: teal;
+  }
 `;
 
 const ContactPage = () => {
   return (
-    <Container>
+    <StyledContainer fliuid>
       <StyledParticles
         id="tsparticles"
         options={{
@@ -116,27 +140,48 @@ const ContactPage = () => {
         </Col>
       </Row>
 
-      <StyledForm>
+      <StyledForm
+        name="contact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+
         <FormRow>
           <Col>
-            <FormInputs placeholder="Name" />
+            <FormInputs placeholder="Name" type="text" name="name" />
           </Col>
           <Col>
-            <FormInputs placeholder="Email" />
+            <FormInputs placeholder="Email" type="email" name="email" />
           </Col>
         </FormRow>
         <FormRow>
           <Col>
-            <FormInputs placeholder="Subject" />
+            <FormInputs placeholder="Subject" type="text" name="subject" />
           </Col>
         </FormRow>
         <FormRow>
           <Col>
-            <Form.Control style={{borderRadius:0}} as="textarea" rows={10} />
+            <Form.Control
+              style={{ borderRadius: 30, fontFamily: "Fredoka One" }}
+              placeholder="What can I help you with..."
+              as="textarea"
+              rows={10}
+              name="message"
+              type="text"
+            />
           </Col>
+        </FormRow>
+        <FormRow>
+          <ButtonCol>
+            <StyledButton variant="secondary" type="submit">
+              Submit
+            </StyledButton>
+          </ButtonCol>
         </FormRow>
       </StyledForm>
-    </Container>
+    </StyledContainer>
   );
 };
 
