@@ -27,6 +27,7 @@ const StyledButton = styled(Button)`
   background-color: teal;
   color: yellow;
   border: none;
+  margin: 1.5rem;
 
   :hover {
     background-color: yellow;
@@ -71,15 +72,11 @@ const ContactForm = () => {
       </FormRow>
       <FormRow>
         <ButtonCol>
-          <AniLink
-            paintDrip
-            to="/"
-            duration={1}
-            color="yellow"
-          >
-            <StyledButton variant="secondary" type="submit">
-              Submit
-            </StyledButton>
+          <StyledButton variant="secondary" type="submit">
+            Submit
+          </StyledButton>
+          <AniLink paintDrip to="/" duration={1} color="yellow">
+            <StyledButton> Back to Home </StyledButton>
           </AniLink>
         </ButtonCol>
       </FormRow>
