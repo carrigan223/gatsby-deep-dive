@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";

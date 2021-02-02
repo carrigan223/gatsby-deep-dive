@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { Form, Row, Col, Button } from "react-bootstrap";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const StyledForm = styled(Form)`
   padding-top: 5rem;
@@ -70,9 +71,16 @@ const ContactForm = () => {
       </FormRow>
       <FormRow>
         <ButtonCol>
-          <StyledButton variant="secondary" type="submit">
-            Submit
-          </StyledButton>
+          <AniLink
+            paintDrip
+            to="/"
+            duration={1}
+            color="yellow"
+          >
+            <StyledButton variant="secondary" type="submit">
+              Submit
+            </StyledButton>
+          </AniLink>
         </ButtonCol>
       </FormRow>
     </StyledForm>
