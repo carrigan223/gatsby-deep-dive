@@ -47,6 +47,7 @@ const StyledContainer = styled(Container)`
   padding-bottom: 6rem;
 `;
 
+
 const ContactPage = () => {
   return (
     <StyledContainer fliuid>

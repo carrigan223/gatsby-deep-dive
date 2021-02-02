@@ -7,7 +7,7 @@ import { HiOutlinePhone } from "@react-icons/all-files/hi/HiOutlinePhone";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const StyledFooter = styled("footer")`
-  color: yellow;
+  color: teal;
   padding: 1.75rem;
 `;
 

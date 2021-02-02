@@ -160,12 +160,7 @@ const Header = () => {
             >
               About
             </NavLink>
-            <NavLink
-              paintDrip
-              to="/contact"
-              duration={1}
-              color="yellow"
-            >
+            <NavLink paintDrip to="/contact" duration={1} color="yellow">
               Contact
             </NavLink>
             <NavLink
