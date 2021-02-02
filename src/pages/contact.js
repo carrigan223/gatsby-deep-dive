@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Particles from "react-tsparticles";
+import ContactForm from "../components/contact-form";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
@@ -9,14 +10,6 @@ const StyledParticles = styled(Particles)`
   left: 0;
   width: 100%;
   height: 100%;
-`;
-
-const StyledForm = styled(Form)`
-  padding-top: 5rem;
-`;
-
-const FormRow = styled(Row)`
-  padding: 2rem 2rem 1rem 1rem;
 `;
 
 const HeaderContainer = styled("div")`
@@ -30,7 +23,7 @@ const HeaderText = styled("h1")`
   padding-left: 1rem;
   font-family: "Righteous";
   font-size: 3.5rem;
-  background-color: red;
+  background-color: yellow;
 
   /* Create the gradient. */
   background-image: linear-gradient(45deg, yellow, teal);
@@ -45,34 +38,12 @@ const HeaderText = styled("h1")`
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-`;
-
-const FormInputs = styled(Form.Control)`
-  border-radius: 30;
-  font-family: "Fredoka One";
+  background-clip: text;
 `;
 
 const StyledContainer = styled(Container)`
   padding-top: 2.5rem;
   padding-bottom: 6rem;
-`;
-
-const ButtonCol = styled(Col)`
-  display: flex;
-  justify-content: center;
-`;
-
-const StyledButton = styled(Button)`
-  font-family: "Fredoka One";
-  font-size: 1.5rem;
-  background-color: teal;
-  color: yellow;
-  border: none;
-
-  :hover {
-    background-color: yellow;
-    color: teal;
-  }
 `;
 
 const ContactPage = () => {
@@ -139,48 +110,7 @@ const ContactPage = () => {
           </HeaderContainer>
         </Col>
       </Row>
-
-      <StyledForm
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-
-        <FormRow>
-          <Col>
-            <FormInputs placeholder="Name" type="text" name="name" />
-          </Col>
-          <Col>
-            <FormInputs placeholder="Email" type="email" name="email" />
-          </Col>
-        </FormRow>
-        <FormRow>
-          <Col>
-            <FormInputs placeholder="Subject" type="text" name="subject" />
-          </Col>
-        </FormRow>
-        <FormRow>
-          <Col>
-            <Form.Control
-              style={{ borderRadius: 30, fontFamily: "Fredoka One" }}
-              placeholder="What can I help you with..."
-              as="textarea"
-              rows={10}
-              name="message"
-              type="text"
-            />
-          </Col>
-        </FormRow>
-        <FormRow>
-          <ButtonCol>
-            <StyledButton variant="secondary" type="submit">
-              Submit
-            </StyledButton>
-          </ButtonCol>
-        </FormRow>
-      </StyledForm>
+      <ContactForm />
     </StyledContainer>
   );
 };
