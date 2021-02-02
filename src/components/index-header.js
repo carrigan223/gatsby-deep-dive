@@ -52,13 +52,27 @@ const StyledDiv = styled("div")`
 `;
 
 const Title = styled("h1")`
-  color: white;
-  text-shadow: 5px 4px 4px grey;
-  color: white;
+  color: yellow;
+  //text-shadow: 5px 4px 4px grey;
   text-decoration: none;
   padding-left: 1rem;
-  font-family: "Amatic SC";
+  font-family: "Righteous";
   font-size: 5rem;
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(45deg, yellow, teal);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 `;
 
 const StyledParticles = styled(Particles)`
@@ -149,7 +163,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               paintDrip
-              to="/projects/mccarron-auto"
+              to="/contact"
               duration={1}
               color="yellow"
             >

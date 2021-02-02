@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Amatic SC`, `Montserrat`],
+        fonts: [`Amatic SC`, `Montserrat`, `Josefin Sans`, `Lobster`,`Fredoka One`, `Righteous`],
         display: "swap",
       },
     },
