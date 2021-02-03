@@ -19,16 +19,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Amatic SC`, `Montserrat`, `Josefin Sans`, `Lobster`,`Fredoka One`, `Righteous`],
+        fonts: [
+          `Amatic SC`,
+          `Montserrat`,
+          `Josefin Sans`,
+          `Lobster`,
+          `Fredoka One`,
+          `Righteous`,
+        ],
         display: "swap",
       },
     },
-
-    resolve: "gatsby-source-filesystem",
-    options: {
-      name: "images",
-      path: "./src/images/",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
     },
-    __key: "images",
-  },  ],
+  ],
 };
