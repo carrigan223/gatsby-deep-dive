@@ -23,5 +23,12 @@ module.exports = {
         display: "swap",
       },
     },
-  ],
+
+    resolve: "gatsby-source-filesystem",
+    options: {
+      name: "images",
+      path: "./src/images/",
+    },
+    __key: "images",
+  },  ],
 };

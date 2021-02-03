@@ -57,30 +57,33 @@ const ProjectInner = ({ transitionStatus, project }) => {
       }
     },
   };
+
   //this is the main project being viewed
   return (
-    <ProjectLayout transitionStatus={transitionStatus}>
-      <FadingContent pose={transitionStatus}>
-        <ProjectHeader project={project} />
-        <ProjectContent photos={project.photos} />
-      </FadingContent>{" "}
-      <TransitionLink
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-        }}
-        to={nextProjectUrl}
-        exit={exitTransition}
-        entry={entryTransition}
-      >
-        <FadingNextProjectHeading pose={transitionStatus}>
-          <NextProjectHeading />
-        </FadingNextProjectHeading>
-        <SlidingHeader pose={transitionStatus}>
-          <ProjectHeader project={project.next} truncated={shouldTruncate} />
-        </SlidingHeader>
-      </TransitionLink>
-    </ProjectLayout>
+    <>
+      <ProjectLayout transitionStatus={transitionStatus}>
+        <FadingContent pose={transitionStatus}>
+          <ProjectHeader project={project} />
+          <ProjectContent photos={project.photos} />
+        </FadingContent>{" "}
+        <TransitionLink
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+          to={nextProjectUrl}
+          exit={exitTransition}
+          entry={entryTransition}
+        >
+          <FadingNextProjectHeading pose={transitionStatus}>
+            <NextProjectHeading />
+          </FadingNextProjectHeading>
+          <SlidingHeader pose={transitionStatus}>
+            <ProjectHeader project={project.next} truncated={shouldTruncate} />
+          </SlidingHeader>
+        </TransitionLink>
+      </ProjectLayout>
+    </>
   );
 };
 // setting up the transition and view of next project
