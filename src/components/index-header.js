@@ -82,6 +82,7 @@ const StyledParticles = styled(Particles)`
   height: 100%;
 `;
 
+
 const Header = () => {
   return (
     <>
@@ -141,7 +142,7 @@ const Header = () => {
         <StyledDiv>
           <Title>Andrew Carrigan</Title>
         </StyledDiv>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor: "yellow", borderColor: "teal", borderWidth: "2px"}}/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <NavLink

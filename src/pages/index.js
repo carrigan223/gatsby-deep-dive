@@ -5,6 +5,9 @@ import Header from "../components/index-header";
 import Breathe from "../components/breathe";
 import Footer from "../components/footer";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
+import AspectRatioBox from "../components/aspect-ratio-box";
 
 ///////
 
@@ -44,7 +47,29 @@ const StyledAni = styled(AniLink)`
   }
 `;
 
+const StyledMe = styled(Img)`
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 8px 8px 4px #999;
+  margin-bottom: 2.5rem;
+`;
+
 const HomePage = () => {
+  const { me } = useStaticQuery(graphql`
+    query {
+      me: file(relativePath: { eq: "me.jpg" }) {
+        sharp: childImageSharp {
+          fluid(quality: 100, grayscale: true) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <Header />
@@ -57,10 +82,16 @@ const HomePage = () => {
               program. - Linus Torvalds
             </StyledQuote>
           </Col>
-          <Col xs={12}>
+          <Col sm={12}>
+            <StyledMe
+              fluid={me.sharp.fluid}
+              alt="automotive service Exellence insignia"
+            />
+          </Col>
+          <Col sm={12}>
             <StyledP>
               Hello welcome to my little slice of the internet, i'm Andrew
-              Carrigan a Front End Developer currently residing in sunny San
+              Carrigan, a Front End Developer currently residing in sunny San
               Diego. I have an unquenchable thirst for knowledge and a passion
               for creating. If im not jumping down the JS rabbit hole you can
               usually find me at the beach with either a dog or surfboard. Feel
@@ -72,7 +103,6 @@ const HomePage = () => {
               say hi!
             </StyledP>
           </Col>
-          <Col xs={12}>Hello world</Col>
           <Col xs={12}>Hello world</Col>
           <Col xs={12}>Hello world</Col>
           <Col xs={12}>Hello world</Col>
