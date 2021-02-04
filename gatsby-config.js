@@ -9,6 +9,14 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/ 
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: "0ccf72e2f216c6b4f804acd4810280",

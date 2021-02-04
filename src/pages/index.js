@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 import Header from "../components/index-header";
-import Breathe from "../components/breathe";
 import Footer from "../components/footer";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import AspectRatioBox from "../components/aspect-ratio-box";
-
+import IconGrid from "../components/icon-grid";
 ///////
 
 const StyledContainer = styled(Container)`
@@ -30,6 +28,14 @@ const StyledP = styled("p")`
   padding: 1rem;
   font-family: "Amatic SC";
   font-size: 1.75rem;
+`;
+
+const StyledP2 = styled("p")`
+  padding: 1rem;
+  font-family: "Amatic SC";
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const StyledQuote = styled("p")`
@@ -58,7 +64,7 @@ const StyledMe = styled(Img)`
 `;
 
 const HomePage = () => {
-  const { me } = useStaticQuery(graphql`
+  const { me, gatsby } = useStaticQuery(graphql`
     query {
       me: file(relativePath: { eq: "me.jpg" }) {
         sharp: childImageSharp {
@@ -83,10 +89,7 @@ const HomePage = () => {
             </StyledQuote>
           </Col>
           <Col sm={12}>
-            <StyledMe
-              fluid={me.sharp.fluid}
-              alt="automotive service Exellence insignia"
-            />
+            <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
           </Col>
           <Col sm={12}>
             <StyledP>
@@ -103,45 +106,18 @@ const HomePage = () => {
               say hi!
             </StyledP>
           </Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
-          <Col xs={12}>Hello world</Col>
+          <Col xs={12}>
+            <StyledP2>
+              Experince with a multitude of Technologies for creating amazing
+              user experiences
+            </StyledP2>
+          </Col>
+          <Col xs={12}>
+            {" "}
+            <StyledMe alt="automotive service Exellence insignia" />
+          </Col>
         </Row>
+        <IconGrid />
         <Footer />
       </StyledContainer>
     </>
