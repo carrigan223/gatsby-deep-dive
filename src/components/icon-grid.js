@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 import Bootstrap from "../svg/bootstrap.svg";
