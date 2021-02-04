@@ -103,11 +103,11 @@ const Footer = () => {
           </div>
         </FooterCol>
         <FooterCol md={4}>
-          <ContactLinks href="mailto: mccarronauto@yahoo.com">
+          <ContactLinks href="mailto: carrigan223@gmail.com">
             <StyledHiOutlineMail />
           </ContactLinks>
           |
-          <ContactLinks href="tel:+14136524132">
+          <ContactLinks href="tel:+14136722507">
             <StyledOutlinePhone />
           </ContactLinks>
         </FooterCol>

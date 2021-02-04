@@ -55,8 +55,8 @@ const StyledAni = styled(AniLink)`
 `;
 
 const StyledMe = styled(Img)`
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
