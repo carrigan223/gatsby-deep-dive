@@ -119,11 +119,6 @@ const HomePage = () => {
           </Col>
         </Row>
         <IconGrid />
-        <Row>
-          <Col>
-            <Example />
-          </Col>
-        </Row>
         <Footer />
       </StyledContainer>
     </>
