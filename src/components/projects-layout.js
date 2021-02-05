@@ -25,9 +25,6 @@ const ProjectLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
 
-      <Box as="header" px={[5, 5]} color="teal">
-        Carrigan Web Designs
-      </Box>
       <Box as="main" px={[3, 5]}>
         {children}
       </Box>

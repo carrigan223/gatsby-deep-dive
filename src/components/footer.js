@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 import { HiOutlineMail } from "@react-icons/all-files/hi/HiOutlineMail";

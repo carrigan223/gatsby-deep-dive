@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import Header from "../components/index-header";
 import Footer from "../components/footer";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import IconGrid from "../components/icon-grid";
-import Example from "../components/Example";
 ///////
 
 const StyledContainer = styled(Container)`
@@ -63,6 +66,7 @@ const StyledMe = styled(Img)`
   box-shadow: 1px 8px 8px 4px #999;
   margin-bottom: 2.5rem;
 `;
+
 
 const HomePage = () => {
   const { me } = useStaticQuery(graphql`

@@ -42,17 +42,24 @@ const HeroWrap = styled(Box)`
     css`
       max-height: 100px;
       overflow: hidden;
-      box-shadow: 1px 8px 8px 6px #999;
+      box-shadow: 2px 8px 8px 6px #a8cccf;
     `}
 `;
 
 const Rule = styled.hr`
-  background: #e3e4e5;
+  background: teal;
   height: 1px;
   border: 0;
-  margin-bottom: 2rem;
 `;
 
+const CWDHeader = styled(Box)`
+  color: gold;
+  font-family: "Righteous";
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  text-decoration-color: teal;
+`;
 
 const Hero = ({ photo, truncated }) => {
   const withFixedAspectRatio = {
@@ -61,7 +68,6 @@ const Hero = ({ photo, truncated }) => {
   };
   return (
     <HeroWrap mt={[4, 5]} truncated={truncated}>
-      <Rule />
       <AspectRatioBox ratio={8 / 5}>
         <Img
           loading={truncated ? "lazy" : "eager"}
@@ -74,6 +80,12 @@ const Hero = ({ photo, truncated }) => {
 
 const ProjectHeader = ({ project, truncated }) => (
   <Box>
+    <Rule />
+    <CWDHeader as="header" color="teal">
+      Carrigan Web Designs
+    </CWDHeader>
+
+    <Rule />
     <Flex flexWrap="wrap">
       <Box width={[1, 1 / 2]}>
         <Title as="h1">{project.title}</Title>

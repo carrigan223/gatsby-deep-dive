@@ -7,6 +7,7 @@ const AspectRatioBox = styled(Box)`
   height: 0;
   /* border: 1px solid grey; */
   box-shadow: 2px 8px 8px 6px #A8CCCF;
+  border: 1px solid gold;
 `;
 
 export default AspectRatioBox;

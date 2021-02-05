@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
+import {  Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Particles from "react-tsparticles";
 
@@ -8,24 +8,16 @@ import Particles from "react-tsparticles";
 
 const CustomNav = styled(Navbar)`
   box-shadow: -2px 8px 8px -4px #999;
-  /* padding-top: 7rem; */
   padding-bottom: 2rem;
-  /* background-color: black; */
   display: flex;
   align-items: space-evenly;
   flex-direction: column;
-  /* linear-gradient(-135deg, rgb(0, 0, 0) 10%, transparent),
-		repeating-linear-gradient(45deg, rgba(134, 40, 40, 1) 0%, rgba(31, 48, 94, 0.6) 5%, transparent 5%, transparent 10%),
-		repeating-linear-gradient(-45deg, rgba(34, 76, 152, 0.4) 0%, rgba(31, 48, 94, 0.5) 5%, transparent 5%, transparent 10%);
-	background-color: rgba(34, 76, 152, 0.25); */
 `;
 
 const NavLink = styled(AniLink)`
   color: gold;
   font-size: 1.25rem;
   font-family: "Montserrat";
-  /* line-height: 1; */
-  /* margin: 0 0.5rem 0 0; */
   padding: 1rem 5rem;
   text-decoration: none;
   text-shadow: 0 0 2px silver, 0 0 2px silver, 0 0 7px silver, 0 0 1px silver;
@@ -41,10 +33,8 @@ const NavLink = styled(AniLink)`
 `;
 
 const StyledDiv = styled("div")`
-  /* background-color: green; */
   padding: 2rem;
   margin-top: 2rem;
-  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +42,6 @@ const StyledDiv = styled("div")`
 
 const Title = styled("h1")`
   color: yellow;
-  //text-shadow: 5px 4px 4px grey;
   text-decoration: none;
   padding-left: 1rem;
   font-family: "Righteous";
@@ -68,6 +57,7 @@ const Title = styled("h1")`
 
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -153,7 +143,7 @@ const Header = () => {
           <Nav>
             <NavLink
               paintDrip
-              to="/projects/mccarron-auto"
+              to="/"
               duration={1}
               color="yellow"
             >
@@ -161,7 +151,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               paintDrip
-              to="/projects/mccarron-auto"
+              to="/about"
               duration={1}
               color="yellow"
             >
@@ -177,14 +167,6 @@ const Header = () => {
               color="yellow"
             >
               Projects
-            </NavLink>
-            <NavLink
-              paintDrip
-              to="/projects/mccarron-auto"
-              duration={1}
-              color="yellow"
-            >
-              Articles
             </NavLink>
           </Nav>
         </Navbar.Collapse>

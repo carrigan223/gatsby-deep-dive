@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Text, Flex } from "rebass";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 //component displaying next project header
@@ -10,12 +9,6 @@ const Heading = styled(Text)`
   font-family: ${(props) => props.theme.fonts.sans};
   font-size: ${(props) => props.theme.fontSizes[3]}px;
   font-weight: normal;
-`;
-
-const Rule = styled.hr`
-  background: #e3e4e5;
-  height: 1px;
-  border: 0;
 `;
 
 const BoxOne = styled(Box)`
