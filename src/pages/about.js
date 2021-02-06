@@ -27,7 +27,7 @@ const StyledMeAndNacho = styled(Img)`
 
 const StyledNachoSunset = styled(Img)`
   height: 390px;
-  width: 60%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2.5rem;
@@ -196,7 +196,7 @@ const AboutPage = () => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
+          <Col md={{span: 8, offset: 2}}>
             <StyledNachoSunset
               fluid={sunset.sharp.fluid}
               alt="Nacho on the beach at sunset"
