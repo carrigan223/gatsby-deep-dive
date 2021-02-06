@@ -25,6 +25,16 @@ const StyledMeAndNacho = styled(Img)`
   border-radius: 15%;
 `;
 
+const StyledNachoSunset = styled(Img)`
+  height: 390px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  box-shadow: 1px 8px 8px 4px #999;
+  border-radius: 15%;
+`;
+
 const PageTitile = styled("h1")`
   color: yellow;
   padding: 1.5rem;
@@ -52,6 +62,11 @@ const StyledText = styled("p")`
   padding: 1.5rem;
   font-family: "Montserrat";
   font-size: 1.25rem;
+`;
+
+const StyledPicCol = styled(Col)`
+  display: flex;
+  align-items: center;
 `;
 
 const AboutPage = () => {
@@ -155,19 +170,37 @@ const AboutPage = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <StyledPicCol md={6}>
             <StyledMeAndNacho
               fluid={snooze.sharp.fluid}
-              alt="Nacho at sunset"
+              alt="Andrew and Chelsea at Lunch"
             />
-          </Col>{" "}
-          <Col>
+          </StyledPicCol>
+          <Col md={6}>
             <StyledText>
               When not diving head first into code i love taking advantage of
               San Diego's wonderful weather, be that at the beach with my dog
               Nacho and partner in crime Chelsea, or finding new trails to
               explore hiking.
             </StyledText>
+            <StyledText>
+              Along with enjoying nature I am also a big basketball fan (while i
+              live in san diego i'm origanlly from massachusetts, go celtics!),
+              an avid gamer, and anime fan. On the more technical side I am also
+              love learning about new technologies and have recently been
+              learning about block chain development. Feel free to contact me
+              with any question or if any techies have cool project ideas you
+              want to colaborate on. Hopefully you enjoyed learning a little
+              about me and feel free get ahold of me!
+            </StyledText>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <StyledNachoSunset
+              fluid={sunset.sharp.fluid}
+              alt="Nacho on the beach at sunset"
+            />
           </Col>
         </Row>
         <Footer />
