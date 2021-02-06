@@ -19,13 +19,19 @@ export const Title = styled(Heading)`
 export const Description = styled(Text)`
   color: ${(props) => props.theme.colors.grey};
   font-family: ${(props) => props.theme.fonts.sans};
-  font-weight: 600;
+  font-weight: 400;
   font-size: ${(props) => props.theme.fontSizes[3]}px;
   line-height: 1.35em;
   margin: 0;
+  color: black;
+  -webkit-text-fill-color: grey; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black;
+
   @media (min-width: ${(props) => props.theme.breakpoints[1]}) {
     font-size: ${(props) => props.theme.fontSizes[4]}px;
   }
+
 `;
 
 export const Category = styled(Text)`
@@ -48,17 +54,22 @@ const HeroWrap = styled(Box)`
 
 const Rule = styled.hr`
   background: teal;
-  height: 1px;
+  height: 5px;
   border: 0;
 `;
 
 const CWDHeader = styled(Box)`
-  color: gold;
+  color: teal;
   font-family: "Righteous";
   display: flex;
+  font-size: 1.5rem;
   justify-content: center;
   text-decoration: underline;
   text-decoration-color: teal;
+  color: black;
+  -webkit-text-fill-color: gold; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: teal;
 `;
 
 const Hero = ({ photo, truncated }) => {
