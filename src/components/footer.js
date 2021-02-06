@@ -91,12 +91,21 @@ const Footer = () => {
               |
               <FooterNav
                 paintDrip
-                to="/"
+                to="/contact"
                 duration={1}
                 color="yellow"
               >
-                Articles
+                Contact
               </FooterNav>
+              <FooterNav
+                paintDrip
+                to="/about"
+                duration={1}
+                color="yellow"
+              >
+                About
+              </FooterNav>
+
               |
             </StyledLinks>
           </div>
