@@ -25,7 +25,7 @@ const StyledLinks = styled("p")``;
 const FooterNav = styled(AniLink)`
   font-family: "Josefin Sans";
   color: teal;
-  padding-top: .75rem;
+  padding-top: 0.75rem;
 `;
 
 const StyledHiOutlineMail = styled(HiOutlineMail)`
@@ -71,12 +71,7 @@ const Footer = () => {
           <div>
             <FooterTitle>ajc.netlify.app</FooterTitle>
             <StyledLinks>
-              <FooterNav
-                paintDrip
-                to="/"
-                duration={1}
-                color="yellow"
-              >
+              <FooterNav paintDrip to="/" duration={1} color="yellow">
                 Home
               </FooterNav>
               |
@@ -89,23 +84,13 @@ const Footer = () => {
                 Projects
               </FooterNav>
               |
-              <FooterNav
-                paintDrip
-                to="/contact"
-                duration={1}
-                color="yellow"
-              >
+              <FooterNav paintDrip to="/contact" duration={1} color="yellow">
                 Contact
               </FooterNav>
-              <FooterNav
-                paintDrip
-                to="/about"
-                duration={1}
-                color="yellow"
-              >
+              |
+              <FooterNav paintDrip to="/about" duration={1} color="yellow">
                 About
               </FooterNav>
-
               |
             </StyledLinks>
           </div>
