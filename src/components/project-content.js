@@ -12,6 +12,7 @@ const Grid = styled(Box)`
 `;
 
 const ProjectContent = ({ photos }) => {
+  console.log(photos);
   return (
     <Box my={4}>
       <Grid>

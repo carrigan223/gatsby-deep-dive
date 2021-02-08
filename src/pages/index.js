@@ -1,16 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Header from "../components/index-header";
 import Footer from "../components/footer";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import IconGrid from "../components/icon-grid";
+import Github from "../svg/github-icon.svg";
+
 ///////
 
 const StyledContainer = styled(Container)`
@@ -67,6 +65,16 @@ const StyledMe = styled(Img)`
   margin-bottom: 2.5rem;
 `;
 
+const Rule = styled.hr`
+  background: teal;
+  height: 5px;
+  border: 0;
+`;
+
+const CenterItem = styled("div")`
+  display: flex;
+  justify-content: center;
+`;
 
 const HomePage = () => {
   const { me } = useStaticQuery(graphql`
@@ -122,7 +130,21 @@ const HomePage = () => {
             <StyledMe alt="automotive service Exellence insignia" />
           </Col>
         </Row>
-        <IconGrid />
+        <Row>
+          <Col md={{ offset: 1, span: 5 }}>
+            <Rule />
+            <IconGrid />
+            <Rule />
+          </Col>
+          <Col>
+            <StyledP2>Feel free to check out my Github!</StyledP2>
+            <CenterItem>
+              <a href="https://github.com/carrigan223">
+                <Github />
+              </a>
+            </CenterItem>
+          </Col>
+        </Row>
         <Footer />
       </StyledContainer>
     </>

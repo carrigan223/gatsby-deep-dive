@@ -25,13 +25,12 @@ export const Description = styled(Text)`
   margin: 0;
   color: black;
   -webkit-text-fill-color: grey; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
 
   @media (min-width: ${(props) => props.theme.breakpoints[1]}) {
     font-size: ${(props) => props.theme.fontSizes[4]}px;
   }
-
 `;
 
 export const Category = styled(Text)`
@@ -100,9 +99,6 @@ const ProjectHeader = ({ project, truncated }) => (
     <Flex flexWrap="wrap">
       <Box width={[1, 1 / 2]}>
         <Title as="h1">{project.title}</Title>
-        <Box mt={3}>
-          <Category as="h3">{project.category.title}</Category>
-        </Box>
       </Box>
       <Box width={[1, 1 / 2]}>
         <Box mt={[3, 0]}>
