@@ -105,7 +105,7 @@ const HomePage = () => {
       <StyledContainer fluid>
         <Row>
           <Col xs={{ span: 6, offset: 3 }}>
-            <Fade top cascade duration={3000}>
+            <Fade bottom cascade duration={3000}>
               <StyledQuote>
                 Most good programmers do programming not because they expect to
                 get paid or get adulation by the public, but because it is fun

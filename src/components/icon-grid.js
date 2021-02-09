@@ -18,61 +18,85 @@ const StyledBootstrap = styled(Bootstrap)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledCss = styled(Css)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledExpress = styled(Express)`
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledGatsby = styled(Gatsby)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledGit = styled(Git)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledGitKraken = styled(GitKraken)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledHtml = styled(Html)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledJavascript = styled(Javascript)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledMongoDB = styled(MongoDB)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledNetlify = styled(Netlify)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledNextJS = styled(NextJS)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 const StyledNodeJS = styled(NodeJS)`
   height: 50px;
   width: 50px;
   margin: 2rem;
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 
 const IconCol = styled(Col)`

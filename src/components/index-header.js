@@ -16,11 +16,11 @@ const CustomNav = styled(Navbar)`
 
 const NavLink = styled(AniLink)`
   color: gold;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-family: "Montserrat";
   padding: 1rem 5rem;
   text-decoration: none;
-  text-shadow: 0 0 2px silver, 0 0 2px silver, 0 0 7px silver, 0 0 1px silver;
+  text-shadow: 0px 3px 2px black, 0 1px 2px black, 0 0 0px black, 0 0 0px black;
 
   :hover {
     text-decoration: none;
@@ -42,7 +42,7 @@ const StyledDiv = styled("div")`
 `;
 
 const TitleShadow = styled("h1")`
-  color: gold;
+  color: teal;
   font-family: "Righteous";
   font-size: 5rem;
   padding-left: 1rem;
@@ -82,7 +82,7 @@ const Title = styled("h1")`
   font-size: 5rem;
   background-color: red;
   /* Create the gradient. */
-  background-image: linear-gradient(45deg, yellow, teal);
+  background-image: linear-gradient(45deg, black, teal);
 
   /* Set the background size and repeat properties. */
   background-size: 100%;
@@ -114,7 +114,7 @@ const Header = () => {
         options={{
           background: {
             color: {
-              value: "#000000"
+              value: "#FFFFFF"
             },
           },
           fpsLimit: 60,
@@ -162,9 +162,9 @@ const Header = () => {
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           style={{
-            backgroundColor: "yellow",
+            backgroundColor: null,
             borderColor: "teal",
-            borderWidth: "2px",
+            borderWidth: "2px",          
           }}
         />
         <Navbar.Collapse id="basic-navbar-nav">
