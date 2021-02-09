@@ -8,6 +8,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import IconGrid from "../components/icon-grid";
 import Github from "../svg/github-icon.svg";
+import Fade from "react-reveal/Fade";
 
 ///////
 
@@ -30,8 +31,9 @@ const StyledP = styled("p")`
   padding: 1rem;
   font-family: "Amatic SC";
   font-size: 1.75rem;
+  color: #131313;
+  letter-spacing: 0.15em;
 `;
-
 const StyledP2 = styled("p")`
   padding: 1rem;
   font-family: "Amatic SC";
@@ -76,6 +78,11 @@ const CenterItem = styled("div")`
   justify-content: center;
 `;
 
+const StyledGit = styled(Github)`
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+`;
+
 const HomePage = () => {
   const { me } = useStaticQuery(graphql`
     query {
@@ -92,14 +99,17 @@ const HomePage = () => {
   return (
     <>
       <Header />
+
       <StyledContainer fluid>
         <Row>
           <Col xs={{ span: 6, offset: 3 }}>
-            <StyledQuote>
-              Most good programmers do programming not because they expect to
-              get paid or get adulation by the public, but because it is fun to
-              program. - Linus Torvalds
-            </StyledQuote>
+            <Fade top cascade duration={3000}>
+              <StyledQuote>
+                Most good programmers do programming not because they expect to
+                get paid or get adulation by the public, but because it is fun
+                to program. - Linus Torvalds
+              </StyledQuote>
+            </Fade>
           </Col>
           <Col sm={12}>
             <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
@@ -140,11 +150,12 @@ const HomePage = () => {
             <StyledP2>Feel free to check out my Github!</StyledP2>
             <CenterItem>
               <a href="https://github.com/carrigan223">
-                <Github />
+                <StyledGit />
               </a>
             </CenterItem>
           </Col>
         </Row>
+
         <Footer />
       </StyledContainer>
     </>

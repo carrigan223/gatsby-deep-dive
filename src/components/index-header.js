@@ -61,7 +61,7 @@ const TitleShadow = styled("h1")`
     right top,
     right bottom,
     from(transparent),
-    color-stop(20%, transparent),
+    color-stop(10%, transparent),
     to(rgba(0, 0, 0, 0.4))
   );
   mask-image: linear-gradient(
@@ -74,6 +74,7 @@ const TitleShadow = styled("h1")`
 `;
 
 const Title = styled("h1")`
+
   color: yellow;
   text-decoration: none;
   padding-left: 1rem;
@@ -94,6 +95,7 @@ const Title = styled("h1")`
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+  margin-bottom: 0;
 `;
 
 const StyledParticles = styled(Particles)`
