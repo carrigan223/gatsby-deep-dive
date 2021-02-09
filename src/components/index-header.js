@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {  Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Particles from "react-tsparticles";
 
@@ -38,6 +38,39 @@ const StyledDiv = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+`;
+
+const TitleShadow = styled("h1")`
+  color: gold;
+  font-family: "Righteous";
+  font-size: 5rem;
+  padding-left: 1rem;
+  margin-top: none;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  -moz-transform: rotateX(210deg);
+  -o-transform: rotateX(210deg);
+  -webkit-transform: rotateX(210deg);
+  transform: rotateX(210deg);
+  perspective: 200px;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    right top,
+    right bottom,
+    from(transparent),
+    color-stop(20%, transparent),
+    to(rgba(0, 0, 0, 0.4))
+  );
+  mask-image: linear-gradient(
+    right top,
+    right bottom,
+    from(transparent),
+    color-stop(20%, transparent),
+    to(rgba(0, 0, 0, 0.4))
+  );
 `;
 
 const Title = styled("h1")`
@@ -47,7 +80,6 @@ const Title = styled("h1")`
   font-family: "Righteous";
   font-size: 5rem;
   background-color: red;
-
   /* Create the gradient. */
   background-image: linear-gradient(45deg, yellow, teal);
 
@@ -80,20 +112,13 @@ const Header = () => {
         options={{
           background: {
             color: {
-              value: "#000000",
+              value: "#000000"
             },
           },
           fpsLimit: 60,
           particles: {
             color: {
-              value: "#008080",
-            },
-            links: {
-              color: "#FFFF00",
-              distance: 170,
-              enable: true,
-              opacity: 0.75,
-              width: 1.5,
+              value: ["#008080","#FFD700"]
             },
             collisions: {
               enable: true,
@@ -130,6 +155,7 @@ const Header = () => {
       <CustomNav expand="lg">
         <StyledDiv>
           <Title>Andrew Carrigan</Title>
+          <TitleShadow>Andrew Carrigan</TitleShadow>
         </StyledDiv>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
@@ -141,20 +167,10 @@ const Header = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <NavLink
-              paintDrip
-              to="/"
-              duration={1}
-              color="yellow"
-            >
+            <NavLink paintDrip to="/" duration={1} color="yellow">
               Home
             </NavLink>
-            <NavLink
-              paintDrip
-              to="/about"
-              duration={1}
-              color="yellow"
-            >
+            <NavLink paintDrip to="/about" duration={1} color="yellow">
               About
             </NavLink>
             <NavLink paintDrip to="/contact" duration={1} color="yellow">
