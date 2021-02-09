@@ -9,6 +9,8 @@ import Img from "gatsby-image";
 import IconGrid from "../components/icon-grid";
 import Github from "../svg/github-icon.svg";
 import Fade from "react-reveal/Fade";
+import Roll from "react-reveal/Roll";
+import Zoom from "react-reveal/Zoom";
 
 ///////
 
@@ -112,22 +114,26 @@ const HomePage = () => {
             </Fade>
           </Col>
           <Col sm={12}>
-            <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
+            <Roll left duration={3000}>
+              <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
+            </Roll>
           </Col>
           <Col sm={12}>
-            <StyledP>
-              Hello welcome to my little slice of the internet, i'm Andrew
-              Carrigan, a Front End Developer currently residing in sunny San
-              Diego. I have an unquenchable thirst for knowledge and a passion
-              for creating. If im not jumping down the JS rabbit hole you can
-              usually find me at the beach with either a dog or surfboard. Feel
-              free to{" "}
-              <StyledAni paintDrip to="/contact" duration={1} color="teal">
-                Contact
-              </StyledAni>{" "}
-              me whether intersted in my services for your project or just to
-              say hi!
-            </StyledP>
+            <Zoom bottom duration={3000}>
+              <StyledP>
+                Hello welcome to my little slice of the internet, i'm Andrew
+                Carrigan, a Front End Developer currently residing in sunny San
+                Diego. I have an unquenchable thirst for knowledge and a passion
+                for creating. If im not jumping down the JS rabbit hole you can
+                usually find me at the beach with either a dog or surfboard.
+                Feel free to{" "}
+                <StyledAni paintDrip to="/contact" duration={1} color="teal">
+                  Contact
+                </StyledAni>{" "}
+                me whether intersted in my services for your project or just to
+                say hi!
+              </StyledP>
+            </Zoom>
           </Col>
           <Col xs={12}>
             <StyledP2>
