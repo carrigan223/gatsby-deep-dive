@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Fade from "react-reveal/Fade";
 
 const StyledForm = styled(Form)`
   padding-top: 5rem;
@@ -42,7 +43,7 @@ const StyledButton = styled(Button)`
   :hover {
     background-color: gold;
     box-shadow: 0px 15px 20px rgba(255, 215, 0, 0.4);
-    color: #fff;
+    color: teal;
     transform: translateY(-7px);
   }
 `;
@@ -59,36 +60,48 @@ const ContactForm = () => {
 
       <FormRow>
         <Col>
-          <FormInputs placeholder="Name" type="text" name="name" />
+          <Fade left duration={2000}>
+            <FormInputs placeholder="Name" type="text" name="name" />
+          </Fade>
         </Col>
         <Col>
-          <FormInputs placeholder="Email" type="email" name="email" />
+          <Fade right duration={2000}>
+            <FormInputs placeholder="Email" type="email" name="email" />
+          </Fade>
         </Col>
       </FormRow>
       <FormRow>
         <Col>
-          <FormInputs placeholder="Subject" type="text" name="subject" />
+          <Fade left duration={2000}>
+            <FormInputs placeholder="Subject" type="text" name="subject" />
+          </Fade>
         </Col>
       </FormRow>
       <FormRow>
         <Col>
-          <FormInputs
-            placeholder="What can I help you with..."
-            as="textarea"
-            rows={10}
-            name="message"
-            type="text"
-          />
+          <Fade right duration={2000}>
+            <FormInputs
+              placeholder="What can I help you with..."
+              as="textarea"
+              rows={10}
+              name="message"
+              type="text"
+            />
+          </Fade>
         </Col>
       </FormRow>
       <FormRow>
         <ButtonCol>
-          <StyledButton variant="secondary" type="submit">
-            Submit
-          </StyledButton>
-          <AniLink paintDrip to="/" duration={1} color="yellow">
-            <StyledButton> Back to Home </StyledButton>
-          </AniLink>
+          <Fade left duration={2000}>
+            <StyledButton variant="secondary" type="submit">
+              Submit
+            </StyledButton>
+          </Fade>
+          <Fade right duration={2000}>
+            <AniLink paintDrip to="/" duration={1} color="yellow">
+              <StyledButton> Back to Home </StyledButton>
+            </AniLink>
+          </Fade>
         </ButtonCol>
       </FormRow>
     </StyledForm>

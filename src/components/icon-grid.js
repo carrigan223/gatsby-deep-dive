@@ -104,6 +104,7 @@ const IconCol = styled(Col)`
   justify-content: center;
 `;
 
+
 const IconGrid = () => {
   return (
     <Container>
