@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import AboutNav from "../components/about-nav";
 import Footer from "../components/footer";
+import Fade from "react-reveal/Fade";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
@@ -65,8 +66,10 @@ const StyledText = styled("p")`
 `;
 
 const StyledPicCol = styled(Col)`
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
+  margin-top: auto;
+  margin-bottom: auto;
 `;
 
 const AboutPage = () => {
@@ -145,64 +148,79 @@ const AboutPage = () => {
       />
       <AboutNav />
       <Container fluid>
-        <Row>
-          <Col>
-            <PageTitile>A little about me ...</PageTitile>
-          </Col>
-        </Row>
+        <Fade bottom duration={2000}>
+          <Row>
+            <Col>
+              <PageTitile>A little about me ...</PageTitile>
+            </Col>
+          </Row>
+        </Fade>
         <Row>
           <Col md={6}>
-            <StyledText>
-              If you've made it this far you probaly already know my names
-              Andrew Carrigan, I'm a developer from San Diego, Ca with a focus
-              on the front end. I have experience with a multitude of libraries
-              and framework and a passion for creation. I love learning new
-              things and you can find me with my head buried in a computer more
-              often then not. One of my favorite aspects of development is the
-              endless supply of new technologies to experience.
-            </StyledText>
+            <Fade bottom duration={2000}>
+              <StyledText>
+                If you've made it this far you probaly already know my names
+                Andrew Carrigan, I'm a developer from San Diego, Ca with a focus
+                on the front end. I have experience with a multitude of
+                libraries and framework and a passion for creation. I love
+                learning new things and you can find me with my head buried in a
+                computer more often then not. One of my favorite aspects of
+                development is the endless supply of new technologies to
+                experience.
+              </StyledText>
+            </Fade>
           </Col>
           <Col md={6}>
-            <StyledMeAndNacho
-              fluid={nacho.sharp.fluid}
-              alt="Andrew and Nacho"
-            />
+            <Fade right duration={2000}>
+              <StyledMeAndNacho
+                fluid={nacho.sharp.fluid}
+                alt="Andrew and Nacho"
+              />
+            </Fade>
           </Col>
         </Row>
+
         <Row>
-          <StyledPicCol md={6}>
-            <StyledMeAndNacho
-              fluid={snooze.sharp.fluid}
-              alt="Andrew and Chelsea at Lunch"
-            />
+          <Col md={6}>
+            <Fade bottom duration={2000}>
+              <StyledText>
+                When not diving head first into code i love taking advantage of
+                San Diego's wonderful weather, be that at the beach with my dog
+                Nacho and partner in crime Chelsea, or finding new trails to
+                explore hiking.
+              </StyledText>
+              <StyledText>
+                Along with enjoying nature I am also a big basketball fan (while
+                i live in san diego i'm origanlly from massachusetts, go
+                celtics!), an avid gamer, and anime fan. On the more technical
+                side I am also love learning about new technologies and have
+                recently been learning about block chain development. Feel free
+                to contact me with any question or if any techies have cool
+                project ideas you want to colaborate on. Hopefully you enjoyed
+                learning a little about me and feel free get ahold of me!
+              </StyledText>
+            </Fade>
+          </Col>
+          <StyledPicCol md={{ order: "first" }}>
+            <Fade left duration={2000}>
+              <StyledMeAndNacho
+                fluid={snooze.sharp.fluid}
+                alt="Andrew and Chelsea at Lunch"
+              />
+            </Fade>
           </StyledPicCol>
-          <Col md={6}>
-            <StyledText>
-              When not diving head first into code i love taking advantage of
-              San Diego's wonderful weather, be that at the beach with my dog
-              Nacho and partner in crime Chelsea, or finding new trails to
-              explore hiking.
-            </StyledText>
-            <StyledText>
-              Along with enjoying nature I am also a big basketball fan (while i
-              live in san diego i'm origanlly from massachusetts, go celtics!),
-              an avid gamer, and anime fan. On the more technical side I am also
-              love learning about new technologies and have recently been
-              learning about block chain development. Feel free to contact me
-              with any question or if any techies have cool project ideas you
-              want to colaborate on. Hopefully you enjoyed learning a little
-              about me and feel free get ahold of me!
-            </StyledText>
-          </Col>
         </Row>
-        <Row>
-          <Col md={{span: 8, offset: 2}}>
-            <StyledNachoSunset
-              fluid={sunset.sharp.fluid}
-              alt="Nacho on the beach at sunset"
-            />
-          </Col>
-        </Row>
+
+        <Fade bottom duration={2000}>
+          <Row>
+            <Col md={{ span: 8, offset: 2 }}>
+              <StyledNachoSunset
+                fluid={sunset.sharp.fluid}
+                alt="Nacho on the beach at sunset"
+              />
+            </Col>
+          </Row>
+        </Fade>
         <Footer />
       </Container>
     </>

@@ -27,7 +27,7 @@ const HeaderText = styled("h1")`
   background-color: yellow;
 
   /* Create the gradient. */
-  background-image: linear-gradient(45deg, yellow, teal);
+  background-image: linear-gradient(45deg, black, teal);
 
   /* Set the background size and repeat properties. */
   background-size: 100%;
@@ -47,7 +47,6 @@ const StyledContainer = styled(Container)`
   padding-bottom: 6rem;
 `;
 
-
 const ContactPage = () => {
   return (
     <StyledContainer fliuid>
@@ -56,17 +55,17 @@ const ContactPage = () => {
         options={{
           background: {
             color: {
-              value: "#000000",
+              value: "#FFFFFF",
             },
           },
           fpsLimit: 60,
           particles: {
             color: {
-              value: "#008080",
+              value: ["#008080","#FFFF00"]
             },
             links: {
-              color: "#FFFF00",
-              distance: 170,
+              color: "#000000",
+              distance: 100,
               enable: true,
               opacity: 0.75,
               width: 1.5,
@@ -85,7 +84,7 @@ const ContactPage = () => {
             number: {
               density: {
                 enable: true,
-                value_area: 800,
+                value_area: 1000,
               },
               value: 90,
             },

@@ -105,7 +105,7 @@ const HomePage = () => {
       <StyledContainer fluid>
         <Row>
           <Col xs={{ span: 6, offset: 3 }}>
-            <Fade bottom cascade duration={3000}>
+            <Fade bottom cascade duration={1500}>
               <StyledQuote>
                 Most good programmers do programming not because they expect to
                 get paid or get adulation by the public, but because it is fun
@@ -114,12 +114,12 @@ const HomePage = () => {
             </Fade>
           </Col>
           <Col sm={12}>
-            <Roll left duration={3000}>
+            <Roll left duration={2000}>
               <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
             </Roll>
           </Col>
           <Col sm={12}>
-            <Zoom bottom duration={3000}>
+            <Zoom bottom duration={2500}>
               <StyledP>
                 Hello welcome to my little slice of the internet, i'm Andrew
                 Carrigan, a Front End Developer currently residing in sunny San
@@ -146,22 +146,23 @@ const HomePage = () => {
             <StyledMe alt="automotive service Exellence insignia" />
           </Col>
         </Row>
-        <Row>
-          <Col md={{ offset: 1, span: 5 }}>
-            <Rule />
-            <IconGrid />
-            <Rule />
-          </Col>
-          <Col>
-            <StyledP2>Feel free to check out my Github!</StyledP2>
-            <CenterItem>
-              <a href="https://github.com/carrigan223">
-                <StyledGit />
-              </a>
-            </CenterItem>
-          </Col>
-        </Row>
-
+        <Zoom bottom duration={3000}>
+          <Row>
+            <Col md={{ offset: 1, span: 5 }}>
+              <Rule />
+              <IconGrid />
+              <Rule />
+            </Col>
+            <Col>
+              <StyledP2>Feel free to check out my Github!</StyledP2>
+              <CenterItem>
+                <a href="https://github.com/carrigan223">
+                  <StyledGit />
+                </a>
+              </CenterItem>
+            </Col>
+          </Row>
+        </Zoom>
         <Footer />
       </StyledContainer>
     </>

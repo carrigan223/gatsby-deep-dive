@@ -74,7 +74,6 @@ const TitleShadow = styled("h1")`
 `;
 
 const Title = styled("h1")`
-
   color: yellow;
   text-decoration: none;
   padding-left: 1rem;
@@ -114,13 +113,13 @@ const Header = () => {
         options={{
           background: {
             color: {
-              value: "#FFFFFF"
+              value: "#FFFFFF",
             },
           },
           fpsLimit: 60,
           particles: {
             color: {
-              value: ["#008080","#FFD700"]
+              value: ["#008080", "#FFD700"],
             },
             collisions: {
               enable: true,
@@ -164,7 +163,7 @@ const Header = () => {
           style={{
             backgroundColor: null,
             borderColor: "teal",
-            borderWidth: "2px",          
+            borderWidth: "2px",
           }}
         />
         <Navbar.Collapse id="basic-navbar-nav">

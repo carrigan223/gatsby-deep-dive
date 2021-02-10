@@ -5,11 +5,10 @@ import { Nav, Navbar } from "react-bootstrap";
 
 const CustomNav = styled(Navbar)`
   padding-bottom: 0.5rem;
-  background-color: black;
   display: flex;
   align-items: space-evenly;
   flex-direction: column;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid teal;
 `;
 
 const NavLink = styled(AniLink)`
@@ -37,7 +36,7 @@ const AboutNav = () => {
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           style={{
-            backgroundColor: "yellow",
+            backgroundColor: null,
             borderColor: "teal",
             borderWidth: "2px",
           }}
@@ -46,7 +45,7 @@ const AboutNav = () => {
           <Nav>
             <NavLink
               paintDrip
-              to="/projects/mccarron-auto"
+              to="/"
               duration={1}
               color="yellow"
             >

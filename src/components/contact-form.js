@@ -14,6 +14,7 @@ const FormRow = styled(Row)`
 const FormInputs = styled(Form.Control)`
   border-radius: 30;
   font-family: "Fredoka One";
+  box-shadow: 0px 8px 15px rgba(0, 128, 128, 0.4);
 `;
 
 const ButtonCol = styled(Col)`
@@ -22,16 +23,27 @@ const ButtonCol = styled(Col)`
 `;
 
 const StyledButton = styled(Button)`
-  font-family: "Fredoka One";
-  font-size: 1.5rem;
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
   background-color: teal;
-  color: yellow;
   border: none;
-  margin: 1.5rem;
-
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 128, 128, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 1rem;
   :hover {
-    background-color: yellow;
-    color: teal;
+    background-color: gold;
+    box-shadow: 0px 15px 20px rgba(255, 215, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
   }
 `;
 
@@ -60,8 +72,7 @@ const ContactForm = () => {
       </FormRow>
       <FormRow>
         <Col>
-          <Form.Control
-            style={{ borderRadius: 30, fontFamily: "Fredoka One" }}
+          <FormInputs
             placeholder="What can I help you with..."
             as="textarea"
             rows={10}
