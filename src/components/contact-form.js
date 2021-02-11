@@ -94,7 +94,7 @@ const ContactForm = () => {
         <ButtonCol>
           <Fade left duration={2000}>
             <StyledButton variant="secondary" type="submit">
-              Submit!
+              Submit
             </StyledButton>
           </Fade>
           <Fade right duration={2000}>
