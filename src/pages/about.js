@@ -7,6 +7,7 @@ import Img from "gatsby-image";
 import AboutNav from "../components/about-nav";
 import Footer from "../components/footer";
 import Fade from "react-reveal/Fade";
+import RenderInBrowser from "react-render-in-browser";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
@@ -101,51 +102,53 @@ const AboutPage = () => {
 
   return (
     <>
-      <StyledParticles
-        id="tsparticles"
-        options={{
-          background: {
-            color: {
-              value: "#f0f0f0",
-            },
-          },
-          fpsLimit: 60,
-          particles: {
-            color: {
-              value: ["#008080", "#FFFF00"],
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 3,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 800,
+      <RenderInBrowser chrome only>
+        <StyledParticles
+          id="tsparticles"
+          options={{
+            background: {
+              color: {
+                value: "#f0f0f0",
               },
-              value: 90,
             },
-            opacity: {
-              value: 0.5,
+            fpsLimit: 60,
+            particles: {
+              color: {
+                value: ["#008080", "#FFFF00"],
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outMode: "bounce",
+                random: false,
+                speed: 3,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  value_area: 800,
+                },
+                value: 90,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                random: true,
+                value: 5,
+              },
             },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      </RenderInBrowser>
       <AboutNav />
       <Container fluid>
         <Fade bottom duration={2000}>
