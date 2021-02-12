@@ -15,8 +15,8 @@ import NextJS from "../svg/nextjs.svg";
 import NodeJS from "../svg/nodejs.svg";
 
 const StyledBootstrap = styled(Bootstrap)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -27,8 +27,8 @@ const StyledBootstrap = styled(Bootstrap)`
   }
 `;
 const StyledCss = styled(Css)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -39,8 +39,8 @@ const StyledCss = styled(Css)`
   }
 `;
 const StyledExpress = styled(Express)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -51,8 +51,8 @@ const StyledExpress = styled(Express)`
   }
 `;
 const StyledGatsby = styled(Gatsby)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -63,8 +63,8 @@ const StyledGatsby = styled(Gatsby)`
   }
 `;
 const StyledGit = styled(Git)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -75,8 +75,8 @@ const StyledGit = styled(Git)`
   }
 `;
 const StyledGitKraken = styled(GitKraken)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -87,7 +87,7 @@ const StyledGitKraken = styled(GitKraken)`
   }
 `;
 const StyledHtml = styled(Html)`
-  height: auto;
+  height: 60px;
   width: auto;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -99,8 +99,8 @@ const StyledHtml = styled(Html)`
   }
 `;
 const StyledJavascript = styled(Javascript)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -111,8 +111,8 @@ const StyledJavascript = styled(Javascript)`
   }
 `;
 const StyledMongoDB = styled(MongoDB)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -123,8 +123,8 @@ const StyledMongoDB = styled(MongoDB)`
   }
 `;
 const StyledNetlify = styled(Netlify)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -135,8 +135,8 @@ const StyledNetlify = styled(Netlify)`
   }
 `;
 const StyledNextJS = styled(NextJS)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -147,8 +147,8 @@ const StyledNextJS = styled(NextJS)`
   }
 `;
 const StyledNodeJS = styled(NodeJS)`
-  height: auto;
-  width: auto;
+  height: 60px;
+  width: 60px;
   margin: 2rem;
   filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
@@ -164,8 +164,7 @@ const IconCol = styled(Col)`
   justify-content: center;
 `;
 
-const CustomModal = styled(Modal)`
-`;
+const CustomModal = styled(Modal)``;
 
 const CustomModalBody = styled(Modal.Body)`
   background-image: repeating-radial-gradient(
@@ -174,7 +173,7 @@ const CustomModalBody = styled(Modal.Body)`
       #e5e5f7 20px
     ),
     repeating-linear-gradient(#00808055, #008080);
-  border-radius: 2%;
+  border-radius: 60px;
 `;
 
 //styles above this line

@@ -48,7 +48,7 @@ const TitleShadow = styled("h1")`
   font-size: 5rem;
   padding-left: 1rem;
   margin-top: none;
-  /* -moz-transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
   -o-transform: scaleY(-1);
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
@@ -56,7 +56,7 @@ const TitleShadow = styled("h1")`
   -o-transform: rotateX(210deg);
   -webkit-transform: rotateX(210deg);
   transform: rotateX(210deg);
-  perspective: 200px; */
+  perspective: 200px;
   -webkit-mask-image: -webkit-gradient(
     linear,
     right top,

@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particles from "react-tsparticles";
 import ContactForm from "../components/contact-form";
 import Footer from "../components/footer";
+import RenderInBrowser from "react-render-in-browser";
 
 const StyledParticles = styled(Particles)`
   position: absolute;
@@ -50,58 +51,60 @@ const StyledContainer = styled(Container)`
 const ContactPage = () => {
   return (
     <StyledContainer fliuid>
-      <StyledParticles
-        id="tsparticles"
-        options={{
-          background: {
-            color: {
-              value: "#FFFFFF",
-            },
-          },
-          fpsLimit: 60,
-          particles: {
-            color: {
-              value: ["#008080","#FFFF00"]
-            },
-            links: {
-              color: "#000000",
-              distance: 100,
-              enable: true,
-              opacity: 0.75,
-              width: 1.5,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 3,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 1000,
+      <RenderInBrowser chrome only>
+        <StyledParticles
+          id="tsparticles"
+          options={{
+            background: {
+              color: {
+                value: "#FFFFFF",
               },
-              value: 90,
             },
-            opacity: {
-              value: 0.5,
+            fpsLimit: 60,
+            particles: {
+              color: {
+                value: ["#008080", "#FFFF00"],
+              },
+              links: {
+                color: "#000000",
+                distance: 100,
+                enable: true,
+                opacity: 0.75,
+                width: 1.5,
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outMode: "bounce",
+                random: false,
+                speed: 3,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  value_area: 1000,
+                },
+                value: 90,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                random: true,
+                value: 5,
+              },
             },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      </RenderInBrowser>
       <Row>
         <Col>
           <HeaderContainer>
