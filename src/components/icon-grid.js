@@ -163,6 +163,20 @@ const IconCol = styled(Col)`
   display: flex;
   justify-content: center;
 `;
+
+const CustomModal = styled(Modal)`
+`;
+
+const CustomModalBody = styled(Modal.Body)`
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 20px
+    ),
+    repeating-linear-gradient(#00808055, #008080);
+  border-radius: 2%;
+`;
+
 //styles above this line
 
 const IconGrid = () => {
@@ -181,15 +195,31 @@ const IconGrid = () => {
     handleOpen();
   };
 
+  const ModalTitle = styled(Col)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    color: black;
+  `;
+
+  const ModalDescription = styled(Col)`
+    color: black;
+  `;
+
   return (
     <Container>
       <Row>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{title}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>{description}</Modal.Body>
-        </Modal>
+        <CustomModal centered show={show} onHide={handleClose}>
+          <CustomModalBody>
+            <Row>
+              <ModalTitle xs={12}>
+                <text>{title}</text>
+              </ModalTitle>
+              <ModalDescription>{description}</ModalDescription>
+            </Row>
+          </CustomModalBody>
+        </CustomModal>
 
         <IconCol xs={12}>
           <StyledBootstrap

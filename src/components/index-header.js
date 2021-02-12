@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Particles from "react-tsparticles";
+import RenderInBrowser from "react-render-in-browser";
 
 ///////
 
@@ -47,7 +48,7 @@ const TitleShadow = styled("h1")`
   font-size: 5rem;
   padding-left: 1rem;
   margin-top: none;
-  -moz-transform: scaleY(-1);
+  /* -moz-transform: scaleY(-1);
   -o-transform: scaleY(-1);
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
@@ -55,7 +56,7 @@ const TitleShadow = styled("h1")`
   -o-transform: rotateX(210deg);
   -webkit-transform: rotateX(210deg);
   transform: rotateX(210deg);
-  perspective: 200px;
+  perspective: 200px; */
   -webkit-mask-image: -webkit-gradient(
     linear,
     right top,
@@ -108,51 +109,53 @@ const StyledParticles = styled(Particles)`
 const Header = () => {
   return (
     <>
-      <StyledParticles
-        id="tsparticles"
-        options={{
-          background: {
-            color: {
-              value: "#FFFFFF",
-            },
-          },
-          fpsLimit: 60,
-          particles: {
-            color: {
-              value: ["#008080", "#FFD700"],
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 3,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 800,
+      <RenderInBrowser chrome only>
+        <StyledParticles
+          id="tsparticles"
+          options={{
+            background: {
+              color: {
+                value: "#FFFFFF",
               },
-              value: 90,
             },
-            opacity: {
-              value: 0.5,
+            fpsLimit: 60,
+            particles: {
+              color: {
+                value: ["#008080", "#FFD700"],
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outMode: "bounce",
+                random: false,
+                speed: 3,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  value_area: 800,
+                },
+                value: 90,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                random: true,
+                value: 5,
+              },
             },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      </RenderInBrowser>
       <CustomNav expand="lg">
         <StyledDiv>
           <Title>Andrew Carrigan</Title>
