@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
 import Zoom from "react-reveal/Zoom";
-import ReactTypingEffect from "react-typing-effect";
+import Typer from "../components/type-write";
 
 ///////
 
@@ -71,46 +71,7 @@ const LandingPage = () => {
     <>
       <StyledContainer fluid>
         <StyledRow>
-          <ReactTypingEffect
-            text={[
-              "Hi, I'm Andrew welcome to my corner of the web",
-              "I'm a Developer I love to code",
-              "Stay a minute and look around",
-              "have fun 🙂",
-            ]}
-            typingDelay={1500}
-            speed={100}
-            eraseDelay={1500}
-            eraseSpeed={100}
-            cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-            displayTextRenderer={(text, i) => {
-              return (
-                <h1>
-                  {text.split("").map((char, i) => {
-                    const key = `${i}`;
-                    return (
-                      <span
-                        key={key}
-                        style={
-                          i % 2 === 0
-                            ? {
-                                color: "black",
-                                fontFamily: "Righteous",
-                              }
-                            : {
-                                color: "teal",
-                                fontFamily: "Righteous",
-                              }
-                        }
-                      >
-                        {char}
-                      </span>
-                    );
-                  })}
-                </h1>
-              );
-            }}
-          />
+          <Typer />
         </StyledRow>
         <StyledRow>
           <Fade bottom duration={3500}>
