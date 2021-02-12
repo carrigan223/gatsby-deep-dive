@@ -65,14 +65,6 @@ const AboutNav = () => {
             >
               Projects
             </NavLink>
-            <NavLink
-              paintDrip
-              to="/projects/mccarron-auto"
-              duration={1}
-              color="yellow"
-            >
-              Articles
-            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </CustomNav>{" "}

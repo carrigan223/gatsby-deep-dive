@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
-import Header from "../components/index-header";
-import Footer from "../components/footer";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import IconGrid from "../components/icon-grid";
-import Github from "../svg/github-icon.svg";
 import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
 import Zoom from "react-reveal/Zoom";
@@ -15,8 +10,8 @@ import Zoom from "react-reveal/Zoom";
 ///////
 
 const StyledContainer = styled(Container)`
-  position: relative;
   background-color: white;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,43 +25,32 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledP = styled("p")`
-  padding: 1rem;
-  font-family: "Amatic SC";
-  font-size: 1.75rem;
-  color: #131313;
-  letter-spacing: 0.15em;
-`;
-const StyledP2 = styled("p")`
-  padding: 1rem;
-  font-family: "Amatic SC";
-  font-size: 1.75rem;
-  display: flex;
-  justify-content: center;
-`;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
 
-const StyledQuote = styled("p")`
-  padding: 3rem 1rem;
-  font-family: "Amatic SC";
-  font-size: 1.75rem;
-  font-style: italic;
-  font-weight: bolder;
-`;
-
-const StyledAni = styled(AniLink)`
-  color: teal;
-  :hover {
-    color: teal;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
-`;
 
-const StyledMe = styled(Img)`
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 1px 8px 8px 4px #999;
-  margin-bottom: 2.5rem;
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
 `;
 
 const Rule = styled.hr`
@@ -75,98 +59,55 @@ const Rule = styled.hr`
   border: 0;
 `;
 
-const CenterItem = styled("div")`
-  display: flex;
-  justify-content: center;
+const StyledButton = styled(Button)`
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: teal;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 128, 128, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 1rem;
+  :hover {
+    background-color: gold;
+    box-shadow: 0px 15px 20px rgba(255, 215, 0, 0.4);
+    color: teal;
+    transform: translateY(-7px);
+  }
 `;
 
-const StyledGit = styled(Github)`
-  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
-  -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
-`;
-
-const HomePage = () => {
-  const { me } = useStaticQuery(graphql`
-    query {
-      me: file(relativePath: { eq: "me.jpg" }) {
-        sharp: childImageSharp {
-          fluid(quality: 100, grayscale: true) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
+const LandingPage = () => {
   return (
     <>
-      <Header />
-
       <StyledContainer fluid>
         <Row>
-          <Col xs={{ span: 6, offset: 3 }}>
-            <Fade bottom cascade duration={1500}>
-              <StyledQuote>
-                Most good programmers do programming not because they expect to
-                get paid or get adulation by the public, but because it is fun
-                to program. - Linus Torvalds
-              </StyledQuote>
+          <Col>
+            <StyledP>
+              Welcome to my corner of the web, stay a minute take your shoes off
+              look around. Hope you enjoy your visit feel free to contact me
+              with any questions.{" "}
+              <span role="img" aria-label="happy emoji">
+                🙂
+              </span>
+            </StyledP>
+            <Fade right duration={2000}>
+              <AniLink paintDrip to="/" duration={1} color="yellow">
+                <StyledButton> Enter </StyledButton>
+              </AniLink>
             </Fade>
           </Col>
-          <Col sm={12}>
-            <Roll left duration={2000}>
-              <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
-            </Roll>
-          </Col>
-          <Col sm={12}>
-            <Zoom bottom duration={2500}>
-              <StyledP>
-                Hello welcome to my little slice of the internet, i'm Andrew
-                Carrigan, a Front End Developer currently residing in sunny San
-                Diego. I have an unquenchable thirst for knowledge and a passion
-                for creating. If im not jumping down the JS rabbit hole you can
-                usually find me at the beach with either a dog or surfboard.
-                Feel free to{" "}
-                <StyledAni paintDrip to="/contact" duration={1} color="teal">
-                  Contact
-                </StyledAni>{" "}
-                me whether intersted in my services for your project or just to
-                say hi!
-              </StyledP>
-            </Zoom>
-          </Col>
-          <Col xs={12}>
-            <StyledP2>
-              Experince with a multitude of Technologies for creating amazing
-              user experiences
-            </StyledP2>
-          </Col>
-          <Col xs={12}>
-            {" "}
-            <StyledMe alt="automotive service Exellence insignia" />
-          </Col>
         </Row>
-        <Zoom bottom duration={3000}>
-          <Row>
-            <Col md={{ offset: 1, span: 5 }}>
-              <Rule />
-              <IconGrid />
-              <Rule />
-            </Col>
-            <Col>
-              <StyledP2>Feel free to check out my Github!</StyledP2>
-              <CenterItem>
-                <a href="https://github.com/carrigan223">
-                  <StyledGit />
-                </a>
-              </CenterItem>
-            </Col>
-          </Row>
-        </Zoom>
-        <Footer />
       </StyledContainer>
     </>
   );
 };
 
-export default HomePage;
+export default LandingPage;
