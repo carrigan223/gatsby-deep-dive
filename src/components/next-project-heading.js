@@ -27,7 +27,7 @@ const NextProjectHeading = () => (
       <Heading pt={3}>Next Project</Heading>
     </BoxOne>
     <BoxTwo mb={5} p={3} width={1 / 2} bg="primary">
-      <AniLink paintDrip to="/" duration={1} color="teal">
+      <AniLink paintDrip to="/home" duration={1} color="teal">
         <Heading pt={3}>Return To Home</Heading>
       </AniLink>
     </BoxTwo>

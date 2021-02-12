@@ -45,7 +45,7 @@ const AboutNav = () => {
           <Nav>
             <NavLink
               paintDrip
-              to="/"
+              to="/home"
               duration={1}
               color="yellow"
             >

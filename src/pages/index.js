@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
 import Zoom from "react-reveal/Zoom";
+import ReactTypingEffect from "react-typing-effect";
 
 ///////
 
@@ -25,32 +26,7 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledP = styled("p")`
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: orange;
-    }
-  }
+  font-family: "Righteous";
 `;
 
 const Rule = styled.hr`
@@ -84,27 +60,65 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const StyledRow = styled(Row)`
+  justify-content: center;
+  height: 50%;
+  align-items: center;
+`;
+
 const LandingPage = () => {
   return (
     <>
       <StyledContainer fluid>
-        <Row>
-          <Col>
-            <StyledP>
-              Welcome to my corner of the web, stay a minute take your shoes off
-              look around. Hope you enjoy your visit feel free to contact me
-              with any questions.{" "}
-              <span role="img" aria-label="happy emoji">
-                🙂
-              </span>
-            </StyledP>
-            <Fade right duration={2000}>
-              <AniLink paintDrip to="/" duration={1} color="yellow">
-                <StyledButton> Enter </StyledButton>
-              </AniLink>
-            </Fade>
-          </Col>
-        </Row>
+        <StyledRow>
+          <ReactTypingEffect
+            text={[
+              "Hi, I'm Andrew welcome to my corner of the web",
+              "I'm a Developer I love to code",
+              "Stay a minute and look around",
+              "have fun 🙂",
+            ]}
+            typingDelay={1500}
+            speed={100}
+            eraseDelay={1500}
+            eraseSpeed={100}
+            cursorRenderer={(cursor) => <h1>{cursor}</h1>}
+            displayTextRenderer={(text, i) => {
+              return (
+                <h1>
+                  {text.split("").map((char, i) => {
+                    const key = `${i}`;
+                    return (
+                      <span
+                        key={key}
+                        style={
+                          i % 2 === 0
+                            ? {
+                                color: "black",
+                                fontFamily: "Righteous",
+                              }
+                            : {
+                                color: "teal",
+                                fontFamily: "Righteous",
+                              }
+                        }
+                      >
+                        {char}
+                      </span>
+                    );
+                  })}
+                </h1>
+              );
+            }}
+          />
+        </StyledRow>
+        <StyledRow>
+          <Fade bottom duration={3500}>
+            <AniLink paintDrip to="/home" duration={1} color="teal">
+              <StyledButton> Enter </StyledButton>
+            </AniLink>
+          </Fade>
+        </StyledRow>
       </StyledContainer>
     </>
   );

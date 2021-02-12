@@ -171,7 +171,7 @@ const Header = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            <NavLink paintDrip to="/" duration={1} color="yellow">
+            <NavLink paintDrip to="/home" duration={1} color="yellow">
               Home
             </NavLink>
             <NavLink paintDrip to="/about" duration={1} color="yellow">

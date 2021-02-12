@@ -98,7 +98,7 @@ const ContactForm = () => {
             </StyledButton>
           </Fade>
           <Fade right duration={2000}>
-            <AniLink paintDrip to="/" duration={1} color="yellow">
+            <AniLink paintDrip to="/home" duration={1} color="yellow">
               <StyledButton> Back to Home </StyledButton>
             </AniLink>
           </Fade>
