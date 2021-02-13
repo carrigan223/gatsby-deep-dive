@@ -66,12 +66,22 @@ const StyledRow = styled(Row)`
   align-items: center;
 `;
 
+const StyledCol = styled(Col)`
+display: flex;
+  justify-content: center;
+  
+`;
+
+
+
 const LandingPage = () => {
   return (
     <>
       <StyledContainer fluid>
         <StyledRow>
-          <Typer />
+          <StyledCol>
+            <Typer />
+          </StyledCol>
         </StyledRow>
         <StyledRow>
           <Fade bottom duration={3500}>
