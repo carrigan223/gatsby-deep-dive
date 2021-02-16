@@ -151,7 +151,7 @@ const HomePage = () => {
             <IconGrid />
             <Rule />
           </Col>
-          <Zoom bottom duration={3000}>
+          <Zoom bottom delay={6000} duration={3000}>
             <Col>
               <StyledP2>Feel free to check out my Github!</StyledP2>
               <CenterItem>

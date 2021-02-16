@@ -2,10 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Img from "gatsby-image";
 import Fade from "react-reveal/Fade";
-import Roll from "react-reveal/Roll";
-import Zoom from "react-reveal/Zoom";
 import Typer from "../components/type-write";
 
 ///////
@@ -23,16 +20,6 @@ const StyledContainer = styled(Container)`
     rgba(229, 235, 235, 0.9906337535014006) 46%,
     rgba(254, 254, 254, 1) 48%
   );
-`;
-
-const StyledP = styled("p")`
-  font-family: "Righteous";
-`;
-
-const Rule = styled.hr`
-  background: teal;
-  height: 5px;
-  border: 0;
 `;
 
 const StyledButton = styled(Button)`
@@ -67,12 +54,9 @@ const StyledRow = styled(Row)`
 `;
 
 const StyledCol = styled(Col)`
-display: flex;
+  display: flex;
   justify-content: center;
-  
 `;
-
-
 
 const LandingPage = () => {
   return (

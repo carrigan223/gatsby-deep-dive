@@ -203,7 +203,6 @@ const IconGrid = () => {
     -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
     padding-bottom: 0.75rem;
     color: teal;
-    
   `;
 
   const ModalDescription = styled(Col)`
@@ -228,82 +227,113 @@ const IconGrid = () => {
         </Modal>
 
         <IconCol xs={12}>
-          <StyledBootstrap
-            onClick={handleClick(
-              "Bootstrap",
-              "CSS framework directed at responsive, mobile-first front-end web development."
-            )}
-          />
-          <StyledCss
-            onClick={handleClick(
-              "CSS",
-              "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML."
-            )}
-          />
-          <StyledExpress
-            onClick={handleClick(
-              "Express",
-              "Back end web application framework for Node.js, designed for building web applications and APIs."
-            )}
-          />
-          <StyledGatsby
-            onClick={handleClick(
-              "Gatsby",
-              "open-source static website generator (SSG) that is based on the frontend development framework React and makes use of Webpack and GraphQL technology."
-            )}
-          />
+          <Zoom left delay={1500} duration={2000}>
+            <StyledBootstrap
+              onClick={handleClick(
+                "Bootstrap",
+                "CSS framework directed at responsive, mobile-first front-end web development."
+              )}
+            />
+          </Zoom>
+          <Zoom left delay={1000} duration={2000}>
+            <StyledCss
+              onClick={handleClick(
+                "CSS",
+                "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={500} duration={2000}>
+            <StyledExpress
+              onClick={handleClick(
+                "Express",
+                "Back end web application framework for Node.js, designed for building web applications and APIs."
+              )}
+            />
+          </Zoom>
+          <Zoom left duration={2000}>
+            <StyledGatsby
+              onClick={handleClick(
+                "Gatsby",
+                "open-source static website generator (SSG) that is based on the frontend development framework React and makes use of Webpack and GraphQL technology."
+              )}
+            />
+          </Zoom>
         </IconCol>
         <IconCol xs={12}>
-          <StyledGit
-            onClick={handleClick(
-              "Git",
-              "Git is a distributed version-control system for tracking changes in any set of files."
-            )}
-          />
-          <StyledGitKraken
-            onClick={handleClick(
-              "GitKraken",
-              "Intuitive Git GUI simplifies and streamlines Git processes."
-            )}
-          />
-          <StyledHtml
-            onClick={handleClick(
-              "Html",
-              "HTML5 is a markup language used for structuring and presenting content on the World Wide Web"
-            )}
-          />
-          <StyledJavascript
-            onClick={handleClick(
-              "Javascript",
-              "A programming language that conforms to the ECMAScript specification."
-            )}
-          />
+          <Zoom left delay={3500} duration={2000}>
+            <StyledGit
+              onClick={handleClick(
+                "Git",
+                "Git is a distributed version-control system for tracking changes in any set of files."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={3000} duration={2000}>
+            <StyledGitKraken
+              onClick={handleClick(
+                "GitKraken",
+                "Intuitive Git GUI simplifies and streamlines Git processes."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={2500} duration={2000}>
+            <StyledHtml
+              onClick={handleClick(
+                "Html",
+                "HTML5 is a markup language used for structuring and presenting content on the World Wide Web"
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={2000} duration={2000}>
+            <StyledJavascript
+              onClick={handleClick(
+                "Javascript",
+                "A programming language that conforms to the ECMAScript specification."
+              )}
+            />
+          </Zoom>
         </IconCol>
         <IconCol xs={12}>
-          <StyledMongoDB
-            onClick={handleClick(
-              "MongoDB",
-              "A NoSQL database program, MongoDB uses JSON-like documents with optional schemas."
-            )}
-          />
-          <StyledNetlify
-            onClick={handleClick(
-              "Netlify",
-              "A cloud computing company that offers hosting and serverless backend services for web applications and static websites."
-            )}
-          />
-          <StyledNextJS
-            onClick={handleClick(
-              "NextJS",
-              "An open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications."
-            )}
-          />
-          <StyledNodeJS
-            onClick={handleClick(
-              "NodeJS",
-              "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the Chrome V8 engine and executes JavaScript code outside a web browser."
-            )}
-          />
+          <Zoom left delay={5500} duration={2000}>
+            <StyledMongoDB
+              onClick={handleClick(
+                "MongoDB",
+                "A NoSQL database program, MongoDB uses JSON-like documents with optional schemas."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={5000} duration={2000}>
+            <StyledNetlify
+              onClick={handleClick(
+                "Netlify",
+                "A cloud computing company that offers hosting and serverless backend services for web applications and static websites."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={4500} duration={2000}>
+            <StyledNextJS
+              onClick={handleClick(
+                "NextJS",
+                "An open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications."
+              )}
+            />
+          </Zoom>
+
+          <Zoom left delay={4000} duration={2000}>
+            <StyledNodeJS
+              onClick={handleClick(
+                "NodeJS",
+                "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the Chrome V8 engine and executes JavaScript code outside a web browser."
+              )}
+            />
+          </Zoom>
         </IconCol>
       </Row>
     </Container>
