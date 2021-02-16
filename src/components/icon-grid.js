@@ -203,7 +203,6 @@ const IconGrid = () => {
     -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
     padding-bottom: 0.75rem;
     color: teal;
-    
   `;
 
   const ModalDescription = styled(Col)`
@@ -211,6 +210,7 @@ const IconGrid = () => {
     padding: 1rem;
     font-family: "Amatic SC";
     font-size: 1.5rem;
+    font-weight: bold;
   `;
 
   return (
