@@ -142,17 +142,16 @@ const HomePage = () => {
             </StyledP2>
           </Col>
           <Col xs={12}>
-            {" "}
             <StyledMe alt="automotive service Exellence insignia" />
           </Col>
         </Row>
-        <Zoom bottom duration={3000}>
-          <Row>
-            <Col md={{ offset: 1, span: 5 }}>
-              <Rule />
-              <IconGrid />
-              <Rule />
-            </Col>
+        <Row>
+          <Col md={{ offset: 1, span: 5 }}>
+            <Rule />
+            <IconGrid />
+            <Rule />
+          </Col>
+          <Zoom bottom duration={3000}>
             <Col>
               <StyledP2>Feel free to check out my Github!</StyledP2>
               <CenterItem>
@@ -161,8 +160,8 @@ const HomePage = () => {
                 </a>
               </CenterItem>
             </Col>
-          </Row>
-        </Zoom>
+          </Zoom>
+        </Row>
         <Footer />
       </StyledContainer>
     </>

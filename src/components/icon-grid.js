@@ -13,6 +13,7 @@ import MongoDB from "../svg/mongodb.svg";
 import Netlify from "../svg/netlify.svg";
 import NextJS from "../svg/nextjs.svg";
 import NodeJS from "../svg/nodejs.svg";
+import Zoom from "react-reveal/Zoom";
 
 const StyledBootstrap = styled(Bootstrap)`
   height: 60px;
@@ -164,16 +165,14 @@ const IconCol = styled(Col)`
   justify-content: center;
 `;
 
-const CustomModal = styled(Modal)``;
-
 const CustomModalBody = styled(Modal.Body)`
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #e5e5f7 20px
-    ),
-    repeating-linear-gradient(#00808055, #008080);
-  border-radius: 60px;
+  background-image: linear-gradient(
+    to top,
+    rgba(225, 215, 0, 0.3),
+    rgba(0, 128, 128, 0.2),
+    white
+  );
+  border-radius: 1%;
 `;
 
 //styles above this line
@@ -197,19 +196,27 @@ const IconGrid = () => {
   const ModalTitle = styled(Col)`
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 1rem;
-    color: black;
+    border-bottom: 2px solid teal;
+    font-family: "righteous";
+    font-size: 2rem;
+    filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+    -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
+    padding-bottom: 0.75rem;
+    color: teal;
+    
   `;
 
   const ModalDescription = styled(Col)`
     color: black;
+    padding: 1rem;
+    font-family: "Amatic SC";
+    font-size: 1.5rem;
   `;
 
   return (
     <Container>
       <Row>
-        <CustomModal centered show={show} onHide={handleClose}>
+        <Modal centered show={show} onHide={handleClose}>
           <CustomModalBody>
             <Row>
               <ModalTitle xs={12}>
@@ -218,7 +225,7 @@ const IconGrid = () => {
               <ModalDescription>{description}</ModalDescription>
             </Row>
           </CustomModalBody>
-        </CustomModal>
+        </Modal>
 
         <IconCol xs={12}>
           <StyledBootstrap
