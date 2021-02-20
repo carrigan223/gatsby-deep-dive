@@ -110,7 +110,7 @@ const Header = () => {
   return (
     <>
       <RenderInBrowser chrome only>
-        <StyledParticles
+        {/* <StyledParticles
           id="tsparticles"
           options={{
             background: {
@@ -154,7 +154,7 @@ const Header = () => {
             },
             detectRetina: true,
           }}
-        />
+        /> */}
       </RenderInBrowser>
       <CustomNav expand="lg">
         <StyledDiv>
