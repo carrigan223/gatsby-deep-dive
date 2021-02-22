@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import RenderInBrowser from "react-render-in-browser";
 
 ///////
 
@@ -100,53 +99,6 @@ const Title = styled("h1")`
 const Header = () => {
   return (
     <>
-      <RenderInBrowser chrome only>
-        {/* <StyledParticles
-          id="tsparticles"
-          options={{
-            background: {
-              color: {
-                value: "#FFFFFF",
-              },
-            },
-            fpsLimit: 60,
-            particles: {
-              color: {
-                value: ["#008080", "#FFD700"],
-              },
-              collisions: {
-                enable: true,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outMode: "bounce",
-                random: false,
-                speed: 3,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-                value: 90,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                random: true,
-                value: 5,
-              },
-            },
-            detectRetina: true,
-          }}
-        /> */}
-      </RenderInBrowser>
       <CustomNav expand="lg">
         <StyledDiv>
           <Title>Andrew Carrigan</Title>

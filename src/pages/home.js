@@ -101,7 +101,6 @@ const HomePage = () => {
   return (
     <>
       <Header />
-
       <StyledContainer fluid>
         <Row>
           <Col xs={{ span: 6, offset: 3 }}>
