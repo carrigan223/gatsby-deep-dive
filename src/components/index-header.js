@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Nav, Navbar } from "react-bootstrap";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Particles from "react-tsparticles";
 import RenderInBrowser from "react-render-in-browser";
 
 ///////
@@ -96,14 +95,6 @@ const Title = styled("h1")`
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   margin-bottom: 0;
-`;
-
-const StyledParticles = styled(Particles)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 `;
 
 const Header = () => {
