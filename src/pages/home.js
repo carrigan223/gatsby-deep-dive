@@ -35,6 +35,7 @@ const StyledP = styled("p")`
   font-size: 1.75rem;
   color: #131313;
   letter-spacing: 0.15em;
+  text-align: center;
 `;
 const StyledP2 = styled("p")`
   padding: 1rem;
@@ -69,6 +70,17 @@ const StyledMe = styled(Img)`
   margin-bottom: 2.5rem;
 `;
 
+const StyledFetured = styled(Img)`
+  height: 100%;
+  width: 100%;
+  border-radius: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.75rem;
+  box-shadow: 1px 8px 8px 4px #999;
+  margin-bottom: 2.5rem;
+`;
+
 const Rule = styled.hr`
   background: teal;
   height: 5px;
@@ -85,8 +97,41 @@ const StyledGit = styled(Github)`
   -webkit-filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.7));
 `;
 
+const FeaturedProject = styled.div`
+  text-align: center;
+  border-bottom: 2px solid teal;
+  margin-bottom: 2rem;
+
+  > h2 {
+    font-family: "Righteous", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    color: teal;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+  }
+
+  > p {
+    font-family: "Amatic SC", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px grey;
+
+    > a {
+      color: teal;
+
+      :hover {
+        font-weight: bold;
+        text-decoration-color: gold;
+      }
+    }
+  }
+`;
+
 const HomePage = () => {
-  const { me } = useStaticQuery(graphql`
+  const { me, featured } = useStaticQuery(graphql`
     query {
       me: file(relativePath: { eq: "me.jpg" }) {
         sharp: childImageSharp {
@@ -95,8 +140,17 @@ const HomePage = () => {
           }
         }
       }
+      featured: file(relativePath: { eq: "the-sharpest.png" }) {
+        sharp: childImageSharp {
+          fluid(quality: 100, grayscale: false) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
+
+  console.log(featured);
 
   return (
     <>
@@ -104,7 +158,7 @@ const HomePage = () => {
       <StyledContainer fluid>
         <Row>
           <Col xs={{ span: 6, offset: 3 }}>
-            <Fade bottom cascade duration={1500}>
+            <Fade right cascade duration={2500}>
               <StyledQuote>
                 Most good programmers do programming not because they expect to
                 get paid or get adulation by the public, but because it is fun
@@ -112,13 +166,34 @@ const HomePage = () => {
               </StyledQuote>
             </Fade>
           </Col>
-          <Col sm={12}>
-            <Roll left duration={2000}>
-              <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
-            </Roll>
+          <Col xs={{ span: 6, offset: 3 }}>
+            <Fade left cascade duration={2000}>
+              <FeaturedProject>
+                <h2>Featured Project</h2>
+                <p>
+                  <a
+                    href="https://thesharpestcollectibles.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Sharpest Collectibles
+                  </a>{" "}
+                  is a fully functioning ecommerce site for selling collectibles
+                  integrating Shopify API with a custom Gatsby front end
+                </p>
+                <Col sm={12}>
+                  <AniLink to="/projects/the-sharpest-collectibles">
+                    <StyledFetured
+                      fluid={featured.sharp.fluid}
+                      alt="picture of Andrew"
+                    />
+                  </AniLink>
+                </Col>
+              </FeaturedProject>
+            </Fade>
           </Col>
           <Col sm={12}>
-            <Zoom bottom duration={2500}>
+            <Fade right duration={2500}>
               <StyledP>
                 Hello welcome to my little slice of the internet, i'm Andrew
                 Carrigan, a Front End Developer currently residing in sunny San
@@ -132,7 +207,12 @@ const HomePage = () => {
                 me whether intersted in my services for your project or just to
                 say hi!
               </StyledP>
-            </Zoom>
+            </Fade>
+          </Col>
+          <Col sm={12}>
+            <Roll left duration={2500}>
+              <StyledMe fluid={me.sharp.fluid} alt="picture of Andrew" />
+            </Roll>
           </Col>
           <Col xs={12}>
             <StyledP2>

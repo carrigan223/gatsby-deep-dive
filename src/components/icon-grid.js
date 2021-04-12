@@ -13,7 +13,6 @@ import MongoDB from "../svg/mongodb.svg";
 import Netlify from "../svg/netlify.svg";
 import NextJS from "../svg/nextjs.svg";
 import NodeJS from "../svg/nodejs.svg";
-import Zoom from "react-reveal/Zoom";
 
 const StyledBootstrap = styled(Bootstrap)`
   height: 60px;
